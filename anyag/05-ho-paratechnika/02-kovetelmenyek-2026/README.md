@@ -1,7 +1,7 @@
 # Követelmények 2026 (9/2023 ÉKM)
 
-Új épület + használatbavételi engedélyhez kell. Régi TNM-számok
-gyakorlatilag azonos U-val, de KNE-szintek különböznek.
+Új épület használatbavételi engedélyéhez kell. A régi TNM U-értékei
+gyakorlatilag azonosak, de a KNE-szintek különböznek.
 
 ## U-értékek (W/m2K, ÉKM)
 - homlokzati fal: **0,24**

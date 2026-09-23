@@ -1,6 +1,6 @@
 # Boltozatok (történeti)
 
-Ma csak meglévő / műemlék, de vizsgán vázlat + név kell.
+Ma már csak meglévő / műemlék épületeken, de vizsgán vázlat + név kell.
 
 - **donga**: egy irányban íves, hosszan futó
 - **csehsüveg (porosz süveg)**: acélgerendák közötti kis dongák

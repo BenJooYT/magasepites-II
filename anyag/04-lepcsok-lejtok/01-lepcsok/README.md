@@ -13,9 +13,9 @@
   max 1,8 m szintkülönbség / kar
 - lakáson/üdülőn belül, tetőtérre, üzemi: max **20 cm**
 - közbenső pihenő egyenes karnál min **0,60 m** (járóvonalon)
-- fejmagasság (járóvonal + fokél-érintő felett függőlegesen) min ~2,0–2,2 m
+- fejmagasság (a fokélekre illesztett érintőtől függőlegesen mérve) min ~2,0–2,2 m
 - akadálymentes fok: homloklapos + orr nélküli, első/utolsó fok jelölve
 - közhasználatúban lépcsőn kívül akadálymentes útvonal is kell
 
 ## Vizsgatipp
-Példa: m=17 → sz = 63-34 = 29–30 cm. Rajzold a járóvonalat + pihenőt.
+Példa: m=17, sz=30 → 2×17+30=64 ✓. Rajzold a járóvonalat + pihenőt.

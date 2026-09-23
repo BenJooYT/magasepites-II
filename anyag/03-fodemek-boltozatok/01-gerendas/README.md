@@ -1,6 +1,6 @@
 # E-gerendás + béléstestes födém
 
-Családi házak alapfödéme, évtizedek óta vizsga-kedvenc.
+Családi házak jellemző födéme, évtizedek óta vizsga-kedvenc.
 
 ## Elemek
 - E-jelű feszített vb gerenda, 2,40–6,60 m (60 cm lépcső)
@@ -20,6 +20,6 @@ Családi házak alapfödéme, évtizedek óta vizsga-kedvenc.
 
 ## Hibák (vizsgakérdés)
 - gyámolítás lehagyása → lehajlás/repedés
-- kettőzés lehagyása → alulméretezett
+- kettőzés lehagyása → elégtelen teherbírás
 - koszorúba nem köt be → nincs együttdolgozás
-- vizesedés / fagyott béléstest beépítése
+- átnedvesedett / fagyos béléstest beépítése

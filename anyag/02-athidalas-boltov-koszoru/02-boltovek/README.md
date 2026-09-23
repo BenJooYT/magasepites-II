@@ -7,5 +7,5 @@ Történeti tégla nyílásáthidalás, ma csak meglévő épület / felújítá
 - Formák: egyenes (szegett), szegmensíves, félköríves.
 - Vállképzés: egész tégla, megfelelő felfekvés + ellensúly (gyámfal).
 - Hibák: váll szétcsúszása → repedés a vállnál / koronán.
-- Vizsgán: vázlat + „nyomott szerkezet, vasalatlan”, ma kiváltja
-  az előregyártott / monolit áthidaló.
+- Vizsgán: vázlat + „nyomott szerkezet, vasalatlan”, ma helyette
+  előregyártott / monolit áthidaló készül.

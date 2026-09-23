@@ -13,7 +13,7 @@ Hagyományos kőműves munka, habarcshézagba rakva.
 ## Legelterjedtebb: kerámia válaszfallap 6 / 10 cm
 - könnyű, födémen bárhol elhelyezhető
 - jól véshető, könnyen szegezhető
-- gépészet (víz, villany horony) esetén **10 cm**
+- gépészeti horony (víz, villany) esetén **10 cm**
 - merevítés: minden 2. vízszintes fugában lágyvas huzal,
   főfalba tüskével befogott függőleges köracélhoz kötve
 
@@ -23,5 +23,5 @@ Hagyományos kőműves munka, habarcshézagba rakva.
 - ajtótok körül merevítés, áthidalóval (lásd 02-es mappa)
 
 ## Vizsgatipp
-Rajzold: 10 cm-es válaszfallap + huzalozás + főfal tüske.
+Rajzold: 10 cm-es válaszfallap + huzalozás + főfali tüske.
 Mondd: „szilárdság + merevség szempontjából elfogadható, kis súly”.

@@ -18,7 +18,7 @@ Mindegyik mappában `README.md` van vizsgakérdés-szerű pontokkal.
 
 ## Források
 
-- Szega Books: GS-5-17 Magasépítés II. (tartalomjegyzék-leírás)
+- Szega Books: GS-5-17 Magasépítés II. (katalógusleírás)
 - SZE Épületszerkezettan jegyzet – válaszfalak
 - Wienerberger Porotherm alkalmazási útmutatók (A-10 neo, A-12, M-25, Thermo, U-zsalu)
 - Xella Ytong PSF áthidaló beépítési útmutató

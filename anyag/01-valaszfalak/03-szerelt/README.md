@@ -22,8 +22,8 @@ Száraz technológia, kis helyszíni élőmunka. Iroda, középület, átalakít
   (vezeték elvihető benne, merőleges fal csatlakoztatható)
 - súlyos tárgy: vázas falnál a vázra, panelosnál beépített
   szerelőkeretre/bordára
-- hazai példák voltak: KŐZFAL acélvázas gipszkarton, PRE-M-ISOL
-  fakeretes-gipsz bordás, Gyproc, Sitraplast / CLOISALL alu profil
+- hazai példák voltak: KÖZFAL acélvázas gipszkarton, PRE-M-ISOL
+  fakeretes-gipsz bordás, Gyproc, Sitraplast- / CLOISALL-féle aluprofil
 - rokonok: szekrényfal (tárol + térelválaszt + jó hangszigetelés),
   paravánfal (nem ér mennyezetig, tagolással stabilizálva)
 

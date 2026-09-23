@@ -1,7 +1,8 @@
 # 01 – Függőleges nem teherhordó szerkezetek (válaszfalak)
 
 A födémre támaszkodnak (földszinten alapozásra/aljzatbetonra).
-Nem hordanak födémterhet, de saját súly + függesztett tárgy + ütés + hang + tűz.
+Nem hordanak födémterhet, de méretezni kell őket saját súlyra,
+függesztett tárgyakra, ütésre, hang- és tűzhatásra.
 
 ## Követelmények (vizsgalista)
 - szilárdság, merevség (kihajlás, kiborulás ellen)

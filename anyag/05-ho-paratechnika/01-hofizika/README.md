@@ -1,4 +1,4 @@
-# Hő- és párfizika alapok
+# Hő- és párafizika alapok
 
 - `λ` hővezetés, `R` ellenállás, `U = 1/R` átbocsátás (W/m2K)
 - `ψ` vonalmenti hőhíd, `χ` pontszerű (dűbel, konzol)

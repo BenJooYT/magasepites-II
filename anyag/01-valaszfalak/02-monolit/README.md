@@ -7,12 +7,12 @@ Helyszíni nedves technológia, ma már ritka.
   40×40 cm-es Ø5,5 rács + 25 mm-es 1,5 mm-es rabicháló
 - gipszrabic: homok + mész + gipsz + enyv, vasbetét **horganyzott**
   (korrózióvédelem!), kétoldali vakolat
-- cementrabic: homok + cement + salak, nem kell horganyzás
+- cementrabic: homok + cement + salak, nem igényel horganyzást
 - ma csak íves / torzfelületű falhoz, burkolathoz
 - hátrány: anyag- + élőmunka-igényes, nedves technológia
 
 ## Vasbeton (6–15 cm)
-- hol: lépcsőházi fal, liftakna, tűz- / betörésbiztos helyiség
+- alkalmazása: lépcsőházi fal, liftakna, tűz- / betörésbiztos helyiség
 - bekötés teherhordó szerkezetbe acéltüskével
 - hátrány: nagy zsaluzatigény, rossz hőtechnika, nehezen véshető,
   nem szegezhető
