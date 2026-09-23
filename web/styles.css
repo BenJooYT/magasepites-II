@@ -132,3 +132,30 @@ nav.toc .card:hover{border-color:var(--acc)}
   .fc-in{transition:none}
 }
 :focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+/* 3D hero (offline canvas) */
+.hero3d{margin:14px 0;overflow:hidden}
+.hero3d-cv{width:100%;height:300px;display:block;border-radius:8px;
+  cursor:grab;touch-action:pan-y;-webkit-tap-highlight-color:transparent}
+.hero3d-cv:active{cursor:grabbing}
+.chiprow{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 4px}
+.chipbtn{background:var(--chip);color:var(--mut);border:1px solid var(--line);
+  border-radius:20px;padding:8px 16px;font-size:14px;cursor:pointer;
+  min-height:44px;font-family:inherit}
+.chipbtn:hover{color:var(--txt);border-color:var(--acc)}
+.chipbtn.on{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:600}
+.hero3d-ex{display:flex;align-items:center;gap:12px}
+.hero3d-ex input[type=range]{flex:1;min-height:44px;accent-color:var(--acc)}
+/* finom kiemelés kártyákon (csak egérrel) */
+@media(hover:hover){
+  nav.toc .card,.grid .card{transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+  nav.toc .card:hover,.grid .card:hover{transform:translateY(-2px);
+    box-shadow:0 8px 24px rgba(0,0,0,.25);border-color:var(--acc)}
+  .fc{transition:transform .12s ease-out}
+}
+@media(max-width:760px){
+  .hero3d-cv{height:240px}
+}
+@media(prefers-reduced-motion:reduce){
+  nav.toc .card,.grid .card,.fc{transition:none}
+  nav.toc .card:hover,.grid .card:hover{transform:none;box-shadow:none}
+}

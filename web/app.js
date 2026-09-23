@@ -113,6 +113,7 @@ document.getElementById("navToggle").addEventListener("click", function () {
   document.getElementById("mainNav").classList.toggle("open");
 });
 function render() {
+  if (window.__heroDestroy) { try { window.__heroDestroy(); } catch (e) {} window.__heroDestroy = null; }
   var h = location.hash || "#/";
   var parts = h.replace(/^#\/?/, "").split("/");
   var r = parts[0] || "";
@@ -139,7 +140,7 @@ function pDashboard() {
   var avg = last10.length ? Math.round(last10.reduce(function (a, h) { return a + h.correct / h.total; }, 0) / last10.length * 100) : null;
   var weak = weakSecs().slice(0, 3);
   var firstOpen = order.filter(function (id) { return !S.secDone[id]; })[0];
-  var htm = "<h1>Vezérlőpult</h1><div class='grid g4'>"
+  var htm = "<h1>Vezérlőpult</h1>" + heroHTML() + "<div class='grid g4'>"
     + statCard("Leckék kész", done + " / " + order.length, pct(done, order.length))
     + statCard("Kártya esedékes", cc.due + " / " + cc.total, pct(cc.total - cc.due, cc.total))
     + statCard("Megtanult kártya", cc.learned + " / " + cc.total, pct(cc.learned, cc.total))
@@ -155,6 +156,40 @@ function pDashboard() {
   htm += S.act.length ? "<div class='card'>" + S.act.slice(0, 8).map(function (a) { return "<div>· <span class='mut'>" + fmtDate(a.ts) + "</span> " + esc(a.label) + "</div>"; }).join("") + "</div>"
     : "<div class='empty'>Még nincs tevékenységed.</div>";
   app.innerHTML = htm;
+  if (window.Hero3D) { try { window.__heroDestroy = window.Hero3D.mount("heroCv", "heroChips", "heroCap", "heroEx"); } catch (e) {} }
+}
+/* 3D hero a vezérlőpulton: a vásznat + rétegchippeket a Hero3D tölti meg. */
+function heroHTML() {
+  return "<div class='card hero3d'><div class='hero3d-head'><div>"
+    + "<h2 style='margin:0'>Ház – rétegről rétegre</h2>"
+    + "<p class='mut small' style='margin:2px 0 0'>Forgasd ujjal vagy egérrel · koppints egy rétegre a magyarázatért.</p></div></div>"
+    + "<canvas id='heroCv' class='hero3d-cv' role='img' aria-label='Forgatható 3D házmodell: alap, fal áthidalóval, koszorú, födém, tető'></canvas>"
+    + "<div class='chiprow' id='heroChips'></div>"
+    + "<p class='mut small' id='heroCap' style='min-height:44px'></p>"
+    + "<label class='small mut hero3d-ex'>Szétrobbantás <input type='range' id='heroEx' min='0' max='100' value='30' aria-label='Rétegek széthúzása'></label></div>";
+}
+/* Finom 3D-tilt a tanulókártyán (csak finom-mutatós, mozgásérzékeny eszközön nem). */
+function addTilt(fc) {
+  if (!fc) return;
+  try {
+    if (window.matchMedia && (window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      window.matchMedia("(pointer: coarse)").matches || !window.matchMedia("(hover: hover)").matches)) return;
+  } catch (e) { return; }
+  var raf = 0;
+  fc.addEventListener("pointermove", function (e) {
+    if (fc.classList.contains("flip")) return;
+    var r = fc.getBoundingClientRect();
+    var dx = (e.clientX - r.left) / Math.max(1, r.width) - 0.5;
+    var dy = (e.clientY - r.top) / Math.max(1, r.height) - 0.5;
+    if (raf) cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(function () {
+      fc.style.transform = "rotateY(" + (dx * 8).toFixed(2) + "deg) rotateX(" + (-dy * 8).toFixed(2) + "deg)";
+    });
+  });
+  fc.addEventListener("pointerleave", function () {
+    if (raf) cancelAnimationFrame(raf);
+    fc.style.transform = "";
+  });
 }
 function statCard(label, val, p) {
   return "<div class='card'><div class='mut small'>" + label + "</div><div class='stat-num'>" + val + "</div><div class='bar" + (p >= 70 ? " good" : p >= 40 ? "" : " warn") + "'><i style='width:" + Math.min(100, p) + "%'></i></div></div>";
@@ -248,7 +283,8 @@ function flashWidget(mount, queue, opts) {
       + "<button class='btn good' data-g='5'>Tudtam (3)</button></div>"
       + "<p class='mut small'>Billentyű: <kbd>Szóköz</kbd> fordít, <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> értékel. (" + esc(DB.sections[it.sec].title) + ")</p></div>";
     var fc = document.getElementById("fc");
-    function flip() { fc.classList.add("flip"); document.getElementById("grades").style.display = "grid"; fc.onclick = null; }
+    addTilt(fc);
+    function flip() { fc.classList.add("flip"); fc.style.transform = ""; document.getElementById("grades").style.display = "grid"; fc.onclick = null; }
     fc.onclick = flip;
     fc.onkeydown = function (e) {
       if (e.code === "Space" || e.code === "Enter") { e.preventDefault(); flip(); }
