@@ -5,6 +5,25 @@ Szega Books GS-5-17 / Bársony István tankönyvsorozat II. kötete alapján ké
 
 > Nem a könyv másolata, hanem saját szavakkal írt vizsgaösszefoglaló.
 
+## Tanulóweboldal (`web/`) – offline
+
+Interaktív tanulótárs ugyanehhez az anyaghoz: leckék, kártyák ismétléses
+ütemezéssel (SM-2), minivizsgák, vizsgaszimuláció, gyenge pontok gyakorlása,
+statisztika. 16 lecke, 92 kártya, 91 kérdés. Nincs szerver, nincs internet,
+nincs regisztráció – a haladás a böngésződben tárolódik.
+
+Megnyitás internet nélkül:
+
+- **Telefonon:** fájlkezelőben keresd meg a `web/index.html` fájlt, és nyisd
+  meg böngészővel (Chrome). Ezután a címsor ⋮ menüjében
+  „Hozzáadás a kezdőképernyőhöz” – így ikonként is indítható, offline.
+- **Gépen:** kattints duplán a `web/index.html`-re, vagy ugyanabban
+  a mappában futtasd: `python3 -m http.server 8000`, majd nyisd meg
+  a `http://localhost:8000` címet.
+- **Tárhely:** ha másik gépre/telefonra költözöl, a Beállítások oldalon
+  az „Export letöltése” menti a haladásodat, amit ugyanott vissza is
+  tölthetsz.
+
 ## Tartalom (`anyag/`)
 
 - `00-szabalyozas/` – TÉKA (OTÉK helyett), ÉKM energetika (TNM helyett), Eurocode-ok
