@@ -45,6 +45,4 @@ egy ütemben betonozzák ki – ez a monolit rész.
 ## Rokon rendszerek
 FERT (lágyvasalású FG gerenda + vázkerámia papucsidom, 3,0–6,6 m)
 és PPB (feszített) vázkerámia rendszerek, valamint az E/EE jelű
-gerendák – ezek is félmonolit jellegűek. (A listán szereplő „SG”
-rövidítés a gyártói katalógusokból nem azonosítható – kérdezd meg
-az oktatót, mit takar!)
+gerendák – ezek is félmonolit jellegűek.

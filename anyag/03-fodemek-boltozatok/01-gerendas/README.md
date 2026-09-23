@@ -42,6 +42,4 @@ tervezni és méretezni kell, csak a rendszer elemeivel építhető.
 FERT (lágyvasalású FG gerenda + vázkerámia papucsidom, 3,0–6,6 m)
 és PPB (feszített) – szerkesztési szabályaik (keresztborda 2 m-ként,
 gerendát vésni-vágni tilos, konzolosan nem építhető) a gyártói
-útmutatóból veendők. Megjegyzés: az ismétlőlistán szereplő „SG”
-rövidítés a gyártói katalógusokból nem azonosítható – kérdezd meg
-az oktatót, melyik rendszert takarja!
+útmutatóból veendők.
