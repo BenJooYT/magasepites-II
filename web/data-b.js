@@ -80,7 +80,7 @@ sections: {
     { q: "Mi az intradosz és az extradosz?", a: "A boltozat belső (alsó), illetve külső (felső) felülete.", kind: "term" }
   ],
   quiz: [
-    { t: "mc", q: "Melyik boltozat terhel pillérekre?", opts: ["Donga", "Csehsüveg", "Keresztboltozat", "Porosz süveg"], ans: 2, exp: "A keresztboltozat két donga áthatása, a sarkokon pillérrel.", ref: "Típusok" },
+    { t: "mc", q: "Melyik boltozat terhel pillérekre?", opts: ["Donga", "Csehsüveg", "Keresztboltozat", "Mindhárom"], ans: 2, exp: "A keresztboltozat két donga áthatása, a sarkokon pillérrel.", ref: "Típusok" },
     { t: "tf", q: "A csehsüveg acélgerendák közötti dongákból áll.", ans: true, exp: "Ezért hívják porosz süvegnek is.", ref: "Típusok" },
     { t: "fill", q: "A boltozat ___ ívként működik.", ans: ["nyomott"], exp: "Nyomott ív vállnyomással.", ref: "Működés" },
     { t: "mc", q: "Mivel történik a boltozat felújítása?", opts: ["Bontással", "Vállmerevítéssel és vonóvassal", "Vakolással", "Festéssel"], ans: 1, exp: "Vállmerevítés, hézagkiöntés, acél vonóvas.", ref: "Felújítás" },
@@ -107,7 +107,7 @@ sections: {
     { t: "mc", q: "Milyen gyakran vannak a csapok a csapos födémben?", opts: ["50 cm-ként", "Kb. 2 m-ként", "60 cm-ként", "5 m-ként"], ans: 1, exp: "Mintegy 2,0 m-ként építik be a keményfa csapokat.", ref: "Csapos gerendafödém" },
     { t: "tf", q: "A borított gerendás gerendatávolsága 60–100 cm.", ans: true, exp: "Négyszög gerendák 60–100 cm-re egymástól.", ref: "Borított gerendás" },
     { t: "fill", q: "A mennyezetvakolat ___ közbeiktatásával készül a fa födémen.", ans: ["nádszövet"], exp: "Nádszövet tartja a vakolatot a fán.", ref: "Csapos gerendafödém" },
-    { t: "mc", q: "Melyik födémnek jó a hőszigetelése?", opts: ["Pórfödém", "Szalmapólyás", "Vakgerendás", "Acélgerendás"], ans: 1, exp: "A szalma-sár-agyag réteg jól szigetel.", ref: "Szalmapólyás" },
+    { t: "mc", q: "Melyik födémnek jó a hőszigetelése?", opts: ["Pórfödém", "Szalmapólyás", "Pallófödém", "Vakgerendás"], ans: 1, exp: "A szalma-sár-agyag réteg jól szigetel.", ref: "Szalmapólyás" },
     { t: "tf", q: "Mestergerendás födémmel 7–8 m is áthidalható.", ans: true, exp: "Mestergerendák 5–6 m-ként + fiókgerendák.", ref: "Mestergerendás" }
   ]
 },
@@ -179,7 +179,7 @@ sections: {
   quiz: [
     { t: "mc", q: "Melyik fokpár felel meg a képletnek?", opts: ["m=17, sz=25", "m=17, sz=30", "m=20, sz=30", "m=15, sz=20"], ans: 1, exp: "2×17+30=64, a 60–64-es sávban van.", ref: "Méretezés" },
     { t: "tf", q: "Egy karon belül lehet eltérő fokméret a tetőtérre vezető karon.", a: 0, exp: "Kivétel nincs: egy karon belül csak azonos méret lehet.", ref: "Méretezés", ans: false },
-    { t: "fill", q: "A közbenső pihenő egyenes karnál legalább ___ hosszú.", ans: ["0,60 m", "0,6 m", "60 cm"], exp: "A járóvonalon mérve 0,60 m a minimum.", ref: "Méretezés" },
+    { t: "fill", q: "A közbenső pihenő egyenes karnál legalább ___ hosszú.", ans: ["0,60 m", "0,60", "0,6 m", "0,6", "60 cm"], exp: "A járóvonalon mérve 0,60 m a minimum.", ref: "Méretezés" },
     { t: "mc", q: "Mekkora szintet hidalhat át az akadálymentes kar?", opts: ["3 m-t", "1,8 m-t", "5 m-t", "Korlátlanul"], ans: 1, exp: "Legfeljebb 1,8 m szintkülönbség karonként.", ref: "Akadálymentes" },
     { t: "tf", q: "Közhasználatú építményben elég csak lépcsőt építeni.", ans: false, exp: "Legalább egy helyen akadálymentes útvonal is kell.", ref: "Akadálymentes" },
     { t: "mc", q: "Mekkora a fejmagasság minimuma?", opts: ["1,5 m", "2,0–2,2 m", "2,5 m", "1,8 m"], ans: 1, exp: "A fokélekre illesztett érintőtől mérve 2,0–2,2 m.", ref: "Méretezés" },
@@ -201,7 +201,7 @@ sections: {
     { q: "Mi kell a kültéri korláthoz?", a: "Fagyálló kialakítás és vízelvezetett lábazat.", kind: "qa" }
   ],
   quiz: [
-    { t: "mc", q: "Milyen legyen a járófelület?", opts: ["Fényes márvány", "Csúszásgátló", "Szőnyeg", "Jég"], ans: 1, exp: "Csúszásgátló kialakítás kötelező.", ref: "Felületek" },
+    { t: "mc", q: "Milyen legyen a járófelület?", opts: ["Tükörfényes, csúszós", "Csúszásgátló", "Vastag szőnyeggel fedett", "Csak szárazon járható"], ans: 1, exp: "Csúszásgátló kialakítás kötelező.", ref: "Felületek" },
     { t: "tf", q: "Nagy esésnél 110 cm-es korlát kell.", ans: true, exp: "Általános 95–100 cm, nagy esésnél 110 cm.", ref: "Magasság" },
     { t: "fill", q: "Akadálymentesnél ___ kapaszkodó kell.", ans: ["kétoldali"], exp: "Mindkét oldalon kapaszkodó szükséges.", ref: "Akadálymentes" },
     { t: "mc", q: "Miért fontos a pálcaosztás?", opts: ["Szép legyen", "A gyermekfej be ne szorulhasson", "Olcsó legyen", "Könnyű legyen"], ans: 1, exp: "Biztonsági méret a beszorulás ellen.", ref: "Hézagok" },
@@ -224,12 +224,12 @@ sections: {
     { q: "Mikor nehéz az épület?", a: "Ha az aktív hőtároló rétegek tömege 400 kg/m2 felett van.", kind: "fact" }
   ],
   quiz: [
-    { t: "mc", q: "Mi az U és R viszonya?", opts: ["U = R", "U = 1/R", "U = R²", "Nincs összefüggés"], ans: 1, exp: "Az átbocsátás az ellenállás reciproka.", ref: "Alapfogalmak" },
+    { t: "mc", q: "Mi az U és R viszonya?", opts: ["U = R", "U = 1/R", "U = R × 2", "Nincs összefüggés"], ans: 1, exp: "Az átbocsátás az ellenállás reciproka.", ref: "Alapfogalmak" },
     { t: "tf", q: "A dűbel pontszerű hőhidat okoz.", ans: true, exp: "Jele χ (khí).", ref: "Alapfogalmak" },
     { t: "fill", q: "A penészvédelemhez fRsi legalább ___ .", ans: ["0,7"], exp: "0,7 alatti értéknél penészveszély van.", ref: "Penészvédelem" },
     { t: "mc", q: "Mi a nyári hővédelem eszköze?", opts: ["Belső sötétítő", "Külső árnyékolás", "Több fűtés", "Párazáró fólia"], ans: 1, exp: "A külső árnyékolás tartja kint a hőt.", ref: "Nyári védelem" },
     { t: "tf", q: "A nehéz épület segíti a KNE teljesítését.", ans: true, exp: "A hőtároló tömeg csökkenti a hőveszteség-tényezőt.", ref: "Hőtárolás" },
-    { t: "mc", q: "Hol csapódik le a pára?", opts: ["A harmatponti hőmérsékleten", "Mindig 20 °C-on", "Csak 0 °C alatt", "Sehol"], ans: 0, exp: "A harmatpont az a hőmérséklet, ahol a pára kicsapódik.", ref: "Harmatpont" }
+    { t: "mc", q: "Hol csapódik le a pára?", opts: ["A harmatponti hőmérsékleten", "A legmelegebb felületen", "Csak 0 °C alatt", "Csak fűtetlen térben"], ans: 0, exp: "A harmatpont az a hőmérséklet, ahol a pára kicsapódik.", ref: "Harmatpont" }
   ]
 },
 "s05b": {
@@ -251,7 +251,7 @@ sections: {
   quiz: [
     { t: "mc", q: "Mennyi a homlokzati fal U-határa?", opts: ["0,17", "0,24", "0,30", "1,1"], ans: 1, exp: "0,24 W/m2K a homlokzati falra.", ref: "U-értékek" },
     { t: "tf", q: "A padlásfödém határa 0,17.", ans: true, exp: "Padlás, lapostető, fűtött tetőtér: 0,17.", ref: "U-értékek" },
-    { t: "fill", q: "A tetősík ablak U-határa ___ .", ans: ["1,3", "1,25"], exp: "ÉKM szerint 1,3 W/m2K.", ref: "U-értékek" },
+    { t: "fill", q: "A tetősík ablak U-határa ___ .", ans: ["1,3"], exp: "ÉKM szerint 1,3 W/m2K (a régi TNM-ben 1,25 volt).", ref: "U-értékek" },
     { t: "mc", q: "Mennyi az Ep határa lakóra KNE-nél?", opts: ["100", "76", "75", "60"], ans: 1, exp: "ÉKM szerint legfeljebb 76 kWh/m2év.", ref: "KNE" },
     { t: "tf", q: "A fűtött-fűtetlen közötti fal határa 0,26.", ans: false, exp: "ÉKM szerint 0,4 (a TNM-ben volt 0,26).", ref: "U-értékek" },
     { t: "mc", q: "Mekkora EPS kell a példában a P30-as falra?", opts: ["8 cm", "12 cm", "15 cm", "30 cm"], ans: 2, exp: "A működő példában 15 cm EPS szerepel.", ref: "Példa rétegrend" },
@@ -277,7 +277,7 @@ sections: {
     { t: "mc", q: "Melyik tipikus hőhíd?", opts: ["Belső válaszfal", "Koszorú síkja", "Parketta", "Festés"], ans: 1, exp: "A koszorú átvezeti a hőt, ha nincs leszigetelve.", ref: "Hőhidak" },
     { t: "tf", q: "Az erkélylemez átvezetése hőhídmegszakítóval kezelhető.", ans: true, exp: "Vagy külön, dilatált szerkezettel.", ref: "Hőhidak" },
     { t: "fill", q: "Belül ___ és párafékezés kell.", ans: ["légzárás"], exp: "A belső oldal lég- és párazáró.", ref: "Rétegrend" },
-    { t: "mc", q: "Mi a lapostető helyes sorrendje alulról?", opts: ["Vízszig, hőszig, párazáró, lejtés", "Lejtés, párazáró, hőszig, vízszig", "Hőszig, vízszig, lejtés, párazáró", "Párazáró, lejtés, vízszig, hőszig"], ans: 1, exp: "Lejtésképzés, párazáró réteg, hőszigetelés, vízszigetelés.", ref: "Rétegrend" },
+    { t: "mc", q: "Mi a lapostető helyes sorrendje alulról?", opts: ["Vízszigetelés, hőszigetelés, párazáró, lejtés", "Lejtés, párazáró, hőszigetelés, vízszigetelés", "Hőszigetelés, vízszigetelés, lejtés, párazáró", "Párazáró, lejtés, vízszigetelés, hőszigetelés"], ans: 1, exp: "Lejtésképzés, párazáró réteg, hőszigetelés, vízszigetelés.", ref: "Rétegrend" },
     { t: "tf", q: "A szigetelést elég egy rétegben, hézagokkal fektetni.", ans: false, exp: "Folytonosan, átfedéssel vagy két rétegben eltolva kell.", ref: "Rétegrend" }
   ]
 }

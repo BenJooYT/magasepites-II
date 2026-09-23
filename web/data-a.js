@@ -26,12 +26,12 @@ sections: {
   quiz: [
     { t: "mc", q: "Mikortól alkalmazandó a TÉKA?", opts: ["2024. január 1-től", "2025. július 1-től", "2023. november 1-től", "2026. január 1-től"], ans: 1, exp: "A 280/2024. rendelet 2025. július 1-től alkalmazandó.", ref: "TÉKA váltja az OTÉK-et" },
     { t: "tf", q: "Az ÉKM rendeletet a 2023. október 31. után beadott engedélyekre kell alkalmazni.", ans: true, exp: "Így szól az átmeneti szabály: a határnap 2023. október 31.", ref: "Energetika: TNM helyett ÉKM" },
-    { t: "mc", q: "Mennyi lakóépületre az összesített energetikai jellemző határa ÉKM-KNE esetén?", opts: ["100 kWh/m2év", "76 kWh/m2év", "75 kWh/m2év", "120 kWh/m2év"], ans: 1, exp: "ÉKM szerint legfeljebb 76 kWh/m2év, a TNM 100-as határával szemben.", ref: "Energetika: TNM helyett ÉKM" },
+    { t: "mc", q: "Mennyi lakóépületre az összesített energetikai jellemző határértéke ÉKM szerinti KNE esetén?", opts: ["100 kWh/m2év", "76 kWh/m2év", "75 kWh/m2év", "120 kWh/m2év"], ans: 1, exp: "ÉKM szerint legfeljebb 76 kWh/m2év, a TNM 100-as határával szemben.", ref: "Energetika: TNM helyett ÉKM" },
     { t: "fill", q: "A falazott szerkezetek méretezése ___ szerint történik.", ans: ["EC6", "Eurocode 6", "MSZ EN 1996"], exp: "Falazatra az EC6 (MSZ EN 1996) vonatkozik.", ref: "Eurocode-ok" },
     { t: "mc", q: "Mire vonatkozik az MSZ EN 845-2?", opts: ["Gerendás födémrendszerekre", "Előregyártott áthidalókra", "Akusztikai méretezésre", "Tűzállósági vizsgálatra"], ans: 1, exp: "Az EN 845-2 az előregyártott (falazó-) áthidalók szabványa.", ref: "Eurocode-ok" },
     { t: "tf", q: "A TNM szerint megújuló nélkül is elérhető volt a BB, ha az Ep 75 kWh/m2év alatt maradt.", ans: true, exp: "A 25% megújuló kiváltható volt 75 alatti fajlagos fogyasztással.", ref: "Energetika: TNM helyett ÉKM" },
     { t: "match", q: "Párosítsd a rendeletet a számával!", pairs: [["TÉKA", "280/2024"], ["OTÉK", "253/1997"], ["ÉKM", "9/2023"], ["TNM", "7/2006"]], exp: "TÉKA 280/2024, OTÉK 253/1997, ÉKM 9/2023, TNM 7/2006.", ref: "Szabályozás" },
-    { t: "short", q: "Sorold fel az ÉKM szerinti KNE három feltételét lakóépületre!", keywords: ["76", "20", "A"], model: "Ep legfeljebb 76 kWh/m2év, CO2 legfeljebb 20 kg/m2év, legalább A/A besorolás.", exp: "Ez a három szám a KNE lényege ÉKM szerint.", ref: "Energetika: TNM helyett ÉKM" }
+    { t: "short", q: "Mennyi lakóépületre az Ep és a CO2 határértéke ÉKM szerinti KNE esetén?", keywords: ["76", "20"], model: "Ep legfeljebb 76 kWh/m2év, CO2 legfeljebb 20 kg/m2év.", exp: "Mindkét számot tudni kell a KNE-hez.", ref: "Energetika: TNM helyett ÉKM" }
   ]
 },
 "s01a": {
@@ -79,7 +79,7 @@ sections: {
     { t: "tf", q: "A vasbeton válaszfal jól véshető és szegezhető.", ans: false, exp: "Nehezen véshető és nem szegezhető, ez a fő hátránya.", ref: "Vasbeton" },
     { t: "fill", q: "A gipszrabic vasbetétjét ___ védelemmel kell ellátni.", ans: ["horganyzott", "horgany"], exp: "A gipsz korrozív, ezért horganyzott betét kell.", ref: "Rabic" },
     { t: "mc", q: "Milyen vastag a vasbeton válaszfal?", opts: ["3–5 cm", "6–15 cm", "20–30 cm", "1–2 cm"], ans: 1, exp: "Általában 6–15 cm vastagságban készül.", ref: "Vasbeton" },
-    { t: "tf", q: "Pénzintézetbe kézenfekvő a vasbeton válaszfal.", ans: true, exp: "Betörésbiztonsági igény esetén ez a jó választás.", ref: "Vasbeton" }
+    { t: "tf", q: "Pénzintézetbe kézenfekvő választás a vasbeton válaszfal.", ans: true, exp: "Betörésbiztonsági igény esetén ez a jó választás.", ref: "Vasbeton" }
   ]
 },
 "s01c": {
@@ -126,7 +126,7 @@ sections: {
     { q: "Mikor bontható az alátámasztás?", a: "Csak a nyomott öv és a koszorú teljes megszilárdulása után.", kind: "qa" }
   ],
   quiz: [
-    { t: "mc", q: "Mi alkotja a nyílásáthidalást a Porotherm áthidalóval?", opts: ["Csak az áthidaló", "Az áthidaló mint húzott öv + ráfalazás/rábetonozás mint nyomott öv", "Csak a rábetonozás", "Két áthidaló egymáson"], ans: 1, exp: "Az elem a húzott öv, a teherbíráshoz a felső nyomott öv is kell.", ref: "Működés" },
+    { t: "mc", q: "Mi kell a Porotherm áthidaló mellé a végleges teherbíráshoz?", opts: ["Semmi, önmagában elég", "Ráfalazás vagy rábetonozás mint felső nyomott öv", "Még egy áthidaló alája", "Csak vakolat"], ans: 1, exp: "Az elem az alsó húzott öv; a felső nyomott öv nélkül nincs végleges teherbírás (kivéve M-25 egyszerű áthidalóként).", ref: "Működés" },
     { t: "tf", q: "Az M-25 egyszerű áthidalóként azonnal terhelhető.", ans: true, exp: "Nem igényel helyszíni nyomott övet, ezért nem kell alátámasztani.", ref: "M-25" },
     { t: "mc", q: "Mennyi a minimális felfekvés Ytong PSF-nél 1500 mm felett?", opts: ["12-12 cm", "20-20 cm", "25-25 cm", "10-10 cm"], ans: 2, exp: "1500 mm nyílásméret felett 25-25 cm a minimum.", ref: "Beépítési szabályok" },
     { t: "fill", q: "Hajlítási méretezésnél a hasznos magasság legfeljebb a falköz ___ része.", ans: ["5/12"], exp: "Például 1 m falköznél legfeljebb 41 cm.", ref: "Beépítési szabályok" },
@@ -176,7 +176,7 @@ sections: {
   quiz: [
     { t: "mc", q: "Mi a koszorú fő feladata?", opts: ["Hőszigetelés", "Terhek elosztása és az épület összefogása", "Vízszigetelés", "Burkolattartás"], ans: 1, exp: "Szétosztja a terheket és merevíti az épületet.", ref: "Feladata" },
     { t: "tf", q: "A gerendák hosszvasai bekötnek a koszorúba.", ans: true, exp: "A kiálló hosszvasak biztosítják az együttdolgozást.", ref: "Feladata" },
-    { t: "fill", q: "A koszorú tipikus vasalása ___ hosszvas kengyelekkel.", ans: ["4×Ø10–12", "4xØ10–12", "négy"], exp: "Tipikusan 4 szál Ø10–12, de a terv az irányadó.", ref: "Kialakítás" },
+    { t: "fill", q: "A koszorú tipikus vasalása ___ hosszvas kengyelekkel.", ans: ["4", "négy", "4 db", "4 szál"], exp: "Tipikusan 4 szál Ø10–12 kengyelekkel, de a terv az irányadó.", ref: "Kialakítás" },
     { t: "mc", q: "Mekkora a Porotherm 30 U zsalu tömege?", opts: ["Kb. 2 kg", "Kb. 7,5 kg", "Kb. 14 kg", "Kb. 25 kg"], ans: 1, exp: "Mintegy 7,5 kg, kézzel rakható.", ref: "Kialakítás" },
     { t: "tf", q: "A koszorú szigeteletlenül is megfelel hőtechnikailag.", ans: false, exp: "Szigeteletlenül ez a leggyakoribb hőhíd.", ref: "Kialakítás" }
   ]
