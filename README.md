@@ -12,6 +12,9 @@ Interaktív tanulótárs ugyanehhez az anyaghoz: leckék, kártyák ismétléses
 statisztika. 16 lecke, 92 kártya, 91 kérdés. Nincs szerver, nincs internet,
 nincs regisztráció – a haladás a böngésződben tárolódik.
 
+Online (ha van internet): https://benjooyt.github.io/magasepites-II/
+– minden `main`-re push után automatikusan frissül (Actions).
+
 Megnyitás internet nélkül:
 
 - **Telefonon:** fájlkezelőben keresd meg a `web/index.html` fájlt, és nyisd
