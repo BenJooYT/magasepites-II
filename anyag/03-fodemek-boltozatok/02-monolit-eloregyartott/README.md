@@ -15,6 +15,12 @@
 - Filigrán (fél-előregyártott): vékony kéregpanel + helyszíni felbeton
 - acél trapézlemez bennmaradó zsaluként + felbeton (iroda, ipari)
 
+## Pórusbeton (Ytong) födémpalló
+Könnyű, jó hőszigetelésű, méretre gyártott palló daruval rakva,
+egymás mellé építve, kibetonozott hézagokkal és koszorúval
+együttdolgoztatva. Fesztáv és teherbírás a gyártói táblázatból
+veendő; a beépítés a gyártó alkalmazástechnika szerint történik.
+
 ## Követelmények
 - teherbírás EC2 szerint, lehajláskorlát, REI tűzállóság,
   lépéshang-szigetelés (úsztatott padló), légzárás

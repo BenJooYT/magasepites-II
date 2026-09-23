@@ -1,8 +1,8 @@
 /* Magasépítés II. – tananyag adatbázis, II. rész (03–05. fejezet) */
 window.MAG_B = {
 chapters: [
-  { id: "ch03", n: "03", title: "Födémek, boltozatok", sections: ["s03a", "s03b", "s03c"] },
-  { id: "ch04", n: "04", title: "Lépcsők, lejtők", sections: ["s04a", "s04b", "s04c"] },
+  { id: "ch03", n: "03", title: "Födémek, boltozatok", sections: ["s03a", "s03b", "s03c", "s03d", "s03e", "s03f"] },
+  { id: "ch04", n: "04", title: "Lépcsők", sections: ["s04a", "s04c"] },
   { id: "ch05", n: "05", title: "Hő- és páratechnikai szerkezetalakítások", sections: ["s05a", "s05b", "s05c"] }
 ],
 sections: {
@@ -11,17 +11,20 @@ sections: {
   body: [
     "A családi házak jellemző födéme évtizedek óta vizsga-kedvenc. Elemei az E-jelű feszített vasbeton gerendák 2,40–6,60 m között, 60 cm-es méretlépcsőben, valamint az EB 60/19, EB 60/24 és EB 30/19 jelű kitöltő béléstestek. A gerendák 60 cm-es, sűrítve 30 cm-es tengelykiosztással, kéttámaszú tartóként építhetők be.",
     ["Felfekvés 4,80 m falközig 10-10 cm, e felett 12-12 cm a két tartófalon.", "A 4,80 m-nél hosszabb gerendákat építés alatt gyámolítani (alátámasztani) kell.", "A födém teljes teherbírását csak a gerendák és béléstestek közötti hézagok kibetonozása és a koszorú után éri el.", "5,40 m fesztáv felett átlagos lakótehernél is gerenda-kettőzés kell: két gerenda kerül egymás mellé, csak utána jön a béléstest.", "Előregyártott gerendánál 5,40 m fesztáv felett kötelező a statikai kiviteli terv.", "Felbetonnal és anélkül más a teherbírás, a gyártói táblázat mindkettőt megadja.", "A gerendák mellé, a koszorúba nyúló sávba pótvasakat kell tenni, a gerendák kiálló hosszvasai bekötnek a koszorúba.", "Ha a födémre válaszfal kerül, azt a méretezésnél figyelembe kell venni."],
-    "Tipikus hibák: a gyámolítás lehagyása (lehajlás, repedés), a kettőzés lehagyása (elégtelen teherbírás), a koszorúba való bekötés hiánya (nincs együttdolgozás), valamint átnedvesedett vagy fagyos béléstest beépítése."
+    "Tipikus hibák: a gyámolítás lehagyása (lehajlás, repedés), a kettőzés lehagyása (elégtelen teherbírás), a koszorúba való bekötés hiánya (nincs együttdolgozás), valamint átnedvesedett vagy fagyos béléstest beépítése.",
+    "A Porotherm födém kerámiaköpenyes előfeszített gerendából (250–725 cm, 25 cm-es lépcsőben, szabad falköz 225–700 cm, 16 kg/fm), kerámia béléstestből (45/10, 45/17, 60/10, 60/17, azaz 45/57/60/72 cm tengelytávra) és C20/25-ös helyszíni felbetonból áll, kiegészítő vasalással. Felfekvése legalább 120 mm, tűzállósága vakoltan REI 120 (A1). Beépítési menete: gerendák elhelyezése, béléstestek berakása, pótvasak és háló elhelyezése, majd bordák, felbeton és koszorú kibetonozása egy ütemben. Rokon vázkerámia rendszerek a FERT (lágyvasalású, 3,0–6,6 m) és a PPB (feszített). Megjegyzés: az ismétlőlistán szereplő SG rövidítés a gyártói katalógusokból nem azonosítható, kérdezd meg az oktatót!"
   ],
   simple: "Az E-gerendás födém olyan, mint a Lego: gerenda, közte béléstest, tetejére beton. Három számot jegyezz meg: 4,80 (felette gyámolítás), 5,40 (felette kettőzés + statikus terv), 10/12 (felfekvés). A beton (kibetonozás + koszorú) nélkül a szerkezet még nem tart.",
-  keys: ["Gerenda: E-jelű feszített, 2,40–6,60 m", "Béléstest: EB 60/19, 60/24, 30/19", "Tengelytáv: 60 cm (sűrítve 30 cm)", "Felfekvés: 10-10 cm 4,80 m-ig, 12-12 cm felette", "4,80 m felett gyámolítás építés alatt", "5,40 m felett kettőzés + kiviteli terv", "Teherbírás csak kibetonozás + koszorú után"],
+  keys: ["Gerenda: E-jelű feszített, 2,40–6,60 m", "Béléstest: EB 60/19, 60/24, 30/19", "Tengelytáv: 60 cm (sűrítve 30 cm)", "Felfekvés: 10-10 cm 4,80 m-ig, 12-12 cm felette", "4,80 m felett gyámolítás építés alatt", "5,40 m felett kettőzés + kiviteli terv", "Teherbírás csak kibetonozás + koszorú után", "Porotherm gerenda: 250–725 cm, felfekvés ≥ 120 mm, REI 120", "Porotherm menete: gerenda → béléstest → vasalás → betonozás egy ütemben"],
   cards: [
     { q: "Milyen hosszú E-gerendák készülnek?", a: "2,40–6,60 m között, 60 cm-es lépcsőben.", kind: "fact" },
     { q: "Melyek az E-gerendához való béléstestek?", a: "EB 60/19, EB 60/24 és EB 30/19.", kind: "term" },
     { q: "Mennyi a minimális felfekvés?", a: "4,80 m falközig 10-10 cm, e felett 12-12 cm.", kind: "fact" },
     { q: "Mikor kell gyámolítani?", a: "A 4,80 m-nél hosszabb gerendákat építés alatt.", kind: "qa" },
     { q: "Mi a gerenda-kettőzés, és mikor kell?", a: "Két gerenda egymás mellett; 5,40 m fesztáv felett átlagos lakótehernél is.", kind: "concept" },
-    { q: "Mikor kötelező statikai kiviteli terv?", a: "Előregyártott gerendánál 5,40 m fesztáv felett.", kind: "fact" }
+    { q: "Mikor kötelező statikai kiviteli terv?", a: "Előregyártott gerendánál 5,40 m fesztáv felett.", kind: "fact" },
+    { q: "Miből áll a Porotherm födém?", a: "Kerámiaköpenyes gerendából, kerámia béléstestből és C20/25 felbetonból, vasalással.", kind: "qa" },
+    { q: "Mi a Porotherm födém beépítési menete?", a: "Gerendák, béléstestek, vasalás, majd bordák + felbeton + koszorú egy ütemben.", kind: "qa" }
   ],
   quiz: [
     { t: "mc", q: "Milyen tengelykiosztással építhetők az E-gerendák?", opts: ["Csak 60 cm", "60 cm, sűrítve 30 cm", "Csak 30 cm", "100 cm"], ans: 1, exp: "Alapból 60 cm, sűrítve 30 cm a tengelytáv.", ref: "Elemek" },
@@ -29,46 +32,52 @@ sections: {
     { t: "fill", q: "5,40 m fesztáv felett ___ kell alkalmazni.", ans: ["gerenda-kettőzés", "gerendakettőzés", "kettőzés"], exp: "Két gerenda kerül egymás mellé a béléstest előtt.", ref: "Beépítés" },
     { t: "mc", q: "Mennyi a felfekvés 5 m-es falköznél?", opts: ["10-10 cm", "12-12 cm", "20-20 cm", "5-5 cm"], ans: 1, exp: "4,80 m felett 12-12 cm kell.", ref: "Beépítés" },
     { t: "tf", q: "A födémre kerülő válaszfalat a méretezésnél figyelembe kell venni.", ans: true, exp: "Többletterhelés, nem hagyható figyelmen kívül.", ref: "Beépítés" },
-    { t: "mc", q: "Melyik NEM tipikus E-gerendás hiba?", opts: ["Gyámolítás lehagyása", "Kettőzés lehagyása", "Koszorúba bekötés hiánya", "Túl sok pótvas"], ans: 3, exp: "A pótvas éppen hogy kell a gerendák mellé.", ref: "Hibák" }
+    { t: "mc", q: "Melyik NEM tipikus E-gerendás hiba?", opts: ["Gyámolítás lehagyása", "Kettőzés lehagyása", "Koszorúba bekötés hiánya", "Túl sok pótvas"], ans: 3, exp: "A pótvas éppen hogy kell a gerendák mellé.", ref: "Hibák" },
+    { t: "mc", q: "Mekkora a Porotherm födémgerenda hossztartománya?", opts: ["2,40–6,60 m", "250–725 cm", "1,20–9,20 m", "3,50–23,50 m"], ans: 1, exp: "250–725 cm 25 cm-es lépcsőben (szabad falköz 225–700 cm). Az 1,20–9,20 az LMF, a 3,50–23,50 a LÜF palló.", ref: "Porotherm födém" },
+    { t: "tf", q: "A Porotherm födém felfekvése legalább 120 mm.", ans: true, exp: "A rendszer előírása: ≥ 120 mm.", ref: "Porotherm födém" }
   ]
 },
 "s03b": {
   title: "Monolit és előregyártott vb födémek",
   body: [
     "A monolit vasbeton lemez 12–20 cm vastag, egy- vagy kétirányú teherhordású, pontszerű támaszoknál gombafödémként készül. Előnye, hogy bármilyen alaprajz lefedhető vele, nagy a teherbírása, jó az akusztikája és a hőtárolása, ami a KNE szerinti nehéz épületminősítéshez is segít. Hátránya a zsaluzás, az állványozás és a technológiai várakozási idő. Mai változata az aktív betonfödém: fűtő-hűtő csövek (például REHAU panelek) kerülnek a vasalat alá, felületközeli kialakítással; az aktív zónában függesztett zárt álmennyezet nem megengedett.",
-    "Az előregyártottak közül a Ferrobeton-féle extrudált üreges födémpanel 16–50 cm magassággal, hosszú fesztávra jó; létezik Porotherm- és Ytong-födémpalló rendszer, Filigrán fél-előregyártott rendszer vékony kéregpanelből és helyszíni felbetonból, valamint acél trapézlemez bennmaradó zsaluzatként felbetonnal, irodákhoz és ipari épületekhez. Követelmények minden födémre: teherbírás EC2 szerint, lehajláskorlát, REI tűzállóság, lépéshang-szigetelés úsztatott padlóval, valamint légzárás."
+    "Az előregyártottak közül a Ferrobeton-féle extrudált üreges födémpanel 16–50 cm magassággal, hosszú fesztávra jó; létezik Porotherm- és Ytong-födémpalló rendszer, Filigrán fél-előregyártott rendszer vékony kéregpanelből és helyszíni felbetonból, valamint acél trapézlemez bennmaradó zsaluzatként felbetonnal, irodákhoz és ipari épületekhez. Követelmények minden födémre: teherbírás EC2 szerint, lehajláskorlát, REI tűzállóság, lépéshang-szigetelés úsztatott padlóval, valamint légzárás.",
+    "A pórusbeton (Ytong) födémpalló könnyű, jó hőszigetelésű, méretre gyártott elem, amelyet daruval raknak egymás mellé, majd kibetonozott hézagokkal és koszorúval dolgoztatnak együtt. Fesztávja és teherbírása a gyártói táblázatból veendő, beépítése a gyártó alkalmazástechnikája szerint történik."
   ],
   simple: "Monolit vagy előregyártott? A monolit bármit kibír és jól tárolja a hőt, de lassú. Az előregyártott gyors, de kötött a mérete. Újdonság, hogy a födémbe fűtőcsövet is tesznek – akkor viszont ne takard el álmennyezettel.",
-  keys: ["Monolit lemez: 12–20 cm, egy/kétirányú, gomba", "Előny: alaprajzi szabadság, hőtárolás (nehéz épület)", "Hátrány: zsaluzás, állvány, technológiai idő", "Aktív födém: cső a vasalat alatt, álmennyezet tilos felette", "Előregyártott: üreges panel 16–50 cm, palló, Filigrán, trapézlemez", "Követelmény: EC2, lehajlás, REI, lépéshang, légzárás"],
+  keys: ["Monolit lemez: 12–20 cm, egy/kétirányú, gomba", "Előny: alaprajzi szabadság, hőtárolás (nehéz épület)", "Hátrány: zsaluzás, állvány, technológiai idő", "Aktív födém: cső a vasalat alatt, álmennyezet tilos felette", "Előregyártott: üreges panel 16–50 cm, palló, Filigrán, trapézlemez", "Ytong födémpalló: könnyű, daruzott, gyártói táblázatból méretezve", "Követelmény: EC2, lehajlás, REI, lépéshang, légzárás"],
   cards: [
     { q: "Milyen vastag a monolit vb lemez?", a: "12–20 cm.", kind: "fact" },
     { q: "Mi a gombafödém?", a: "Pontszerű támaszokra készülő, kétirányú monolit lemez.", kind: "concept" },
     { q: "Mi az aktív betonfödém?", a: "Fűtő-hűtő csövekkel szerelt monolit födém a vasalat alatt.", kind: "term" },
     { q: "Mi tilos az aktív zóna alatt?", a: "Függesztett zárt álmennyezet.", kind: "qa" },
     { q: "Mi a Filigrán rendszer?", a: "Vékony kéregpanel + helyszíni felbeton, fél-előregyártott födém.", kind: "term" },
-    { q: "Hogyan készül a lépéshang-szigetelés?", a: "Úsztatott padlóval.", kind: "qa" }
+    { q: "Hogyan készül a lépéshang-szigetelés?", a: "Úsztatott padlóval.", kind: "qa" },
+    { q: "Mit kell tudni az Ytong födémpallóról?", a: "Könnyű, méretre gyártott, daruval rakják, gyártói táblázatból méretezik.", kind: "qa" }
   ],
   quiz: [
     { t: "mc", q: "Melyik a monolit födém előnye?", opts: ["Olcsó zsaluzás", "Bármilyen alaprajz + jó hőtárolás", "Nincs technológiai idő", "Daruzás nélkül építhető"], ans: 1, exp: "Szabad forma és nagy hőtároló tömeg a fő előny.", ref: "Monolit vb lemez" },
     { t: "tf", q: "Az aktív födém fölé az aktív zónában álmennyezet tehető.", ans: false, exp: "Zárt álmennyezet nem megengedett az aktív zónában.", ref: "Aktív betonfödém" },
     { t: "fill", q: "Az extrudált üreges födémpanel ___ cm magassággal készül.", ans: ["16–50", "16-50"], exp: "16–50 cm közötti magassággal gyártják.", ref: "Előregyártott" },
     { t: "mc", q: "Melyik fél-előregyártott rendszer?", opts: ["Gombafödém", "Filigrán", "Csehsüveg", "Donga"], ans: 1, exp: "Filigrán: kéregpanel + helyszíni felbeton.", ref: "Előregyártott" },
-    { t: "tf", q: "A monolit födém segíti a nehéz épületminősítést.", ans: true, exp: "Nagy hőtároló tömege miatt igen.", ref: "Monolit vb lemez" }
+    { t: "tf", q: "A monolit födém segíti a nehéz épületminősítést.", ans: true, exp: "Nagy hőtároló tömege miatt igen.", ref: "Monolit vb lemez" },
+    { t: "tf", q: "Az Ytong födémpalló daru nélkül, kézzel is beépíthető.", ans: false, exp: "Daruval rakják, méretezés gyártói táblázatból.", ref: "Pórusbeton palló" }
   ]
 },
 "s03c": {
   title: "Boltozatok (történeti)",
   body: [
-    "A boltozatok ma már csak meglévő, illetve műemlék épületeken fordulnak elő, de vizsgán vázlatot és nevet kérnek. A donga egy irányban íves, hosszan futó boltozat; a csehsüveg, más néven porosz süveg, acélgerendák közötti kis dongák sora; a keresztboltozat két donga áthatása, amely pillérekre terhel. Anyaguk tégla vagy kő, működésük nyomott ív vállnyomással. Felújításuk vállmerevítéssel, hézagkiöntéssel és acél vonóvassal történik."
+    "A boltozatok ma már csak meglévő, illetve műemlék épületeken fordulnak elő, de vizsgán vázlatot és nevet kérnek. A donga egy irányban íves, hosszan futó boltozat (födémként főleg pincefödémnek); a csehsüveg, más néven porosz süveg, acélgerendák közötti kis dongák sora; a keresztboltozat két donga áthatása, amely pillérekre terhel. Anyaguk tégla vagy kő, működésük nyomott ív vállnyomással. Felújításuk vállmerevítéssel, hézagkiöntéssel és acél vonóvassal történik. Szakkifejezések: vezérgörbe (a felületet származtató görbe), intradosz (belső felület), extradosz (külső felület), záradékvonal (az ív tetején futó vonal), fiokboltozat (zárt felület áttörése nyíláshoz)."
   ],
   simple: "Három nevet jegyezz meg: donga (hosszú alagútív), csehsüveg (gerendák közti kis ívek), keresztboltozat (két ív találkozása). Mind téglából van, mind nyom, és a szélét fogni kell.",
-  keys: ["Donga: egy irányban íves, hosszan futó", "Csehsüveg (porosz süveg): acélgerendák közti dongák", "Keresztboltozat: két donga áthatása, pillérre terhel", "Anyag: tégla/kő; működés: nyomott ív + vállnyomás", "Felújítás: vállmerevítés, hézagkiöntés, vonóvas"],
+  keys: ["Donga: egy irányban íves, hosszan futó (pincefödém)", "Csehsüveg (porosz süveg): acélgerendák közti dongák", "Keresztboltozat: két donga áthatása, pillérre terhel", "Anyag: tégla/kő; működés: nyomott ív + vállnyomás", "Felújítás: vállmerevítés, hézagkiöntés, vonóvas", "Vezérgörbe, intradosz, extradosz, záradékvonal, fiokboltozat"],
   cards: [
     { q: "Mi a donga?", a: "Egy irányban íves, hosszan futó boltozat.", kind: "term" },
     { q: "Mi a csehsüveg?", a: "Acélgerendák közötti kis dongák sora (porosz süveg).", kind: "term" },
     { q: "Mi a keresztboltozat?", a: "Két donga áthatása, pillérekre terhel.", kind: "term" },
     { q: "Hogyan működik a boltozat?", a: "Nyomott ívként, vállnyomással.", kind: "concept" },
-    { q: "Mivel újítják fel a boltozatot?", a: "Vállmerevítéssel, hézagkiöntéssel, acél vonóvassal.", kind: "qa" }
+    { q: "Mivel újítják fel a boltozatot?", a: "Vállmerevítéssel, hézagkiöntéssel, acél vonóvassal.", kind: "qa" },
+    { q: "Mi az intradosz és az extradosz?", a: "A boltozat belső (alsó), illetve külső (felső) felülete.", kind: "term" }
   ],
   quiz: [
     { t: "mc", q: "Melyik boltozat terhel pillérekre?", opts: ["Donga", "Csehsüveg", "Keresztboltozat", "Porosz süveg"], ans: 2, exp: "A keresztboltozat két donga áthatása, a sarkokon pillérrel.", ref: "Típusok" },
@@ -76,6 +85,79 @@ sections: {
     { t: "fill", q: "A boltozat ___ ívként működik.", ans: ["nyomott"], exp: "Nyomott ív vállnyomással.", ref: "Működés" },
     { t: "mc", q: "Mivel történik a boltozat felújítása?", opts: ["Bontással", "Vállmerevítéssel és vonóvassal", "Vakolással", "Festéssel"], ans: 1, exp: "Vállmerevítés, hézagkiöntés, acél vonóvas.", ref: "Felújítás" },
     { t: "tf", q: "Új építésben ma is boltozatot tervezünk.", ans: false, exp: "Csak meglévő, műemlék épületeken fordul elő.", ref: "Bevezető" }
+  ]
+},
+"s03d": {
+  title: "Hagyományos fa födémek",
+  body: [
+    "Ma új szerkezetként már ritkán készül fa födém, de felújításnál és vizsgán részletesen kell. Két alaphelyzet van: a gerendafödémnél a tartók egymás mellett zárt sorban fekszenek, a gerendás födémnél a távolabb lévő gerendák között kitöltő vagy átfedő elemek vannak. A csapos gerendafödém sűrűn egymás mellé helyezett bárdolt vagy fűrészelt gerendákból áll, együttdolgozásukat mintegy 2,0 m-ként beépített keményfa csapok biztosítják; a gerendavégek alátétdeszka közbeiktatásával támaszkodnak a főfalakra, a padló és a gerendák között homokfeltöltés van, az alsó síkra pedig nádszövet közbeiktatásával kerül a mennyezetvakolat.",
+    "A gerendás fafödémek változatai: a szalmapólyásnál lécekre vagy vájatokba sárba áztatott szalmacsöves karók kerülnek, sártapasztással és agyagréteggel (jó hőszigetelésű, házilagos); a pórfödém alulról látható gyalult gerendákból és deszkázatból áll, feltöltéssel és agyagtapasztással; a pallófödém karcsú magas pallókból készül sűrű kiosztással, kifordulás elleni kitámasztással; a borított gerendásnál 60–100 cm-ként álló négyszög gerendákra alul-felül deszkaborítás kerül, felül feltöltéssel és padozattal (béléses változatban a gerendák közé süllyesztett bélésdeszkára, kisebb szerkezeti magassággal); a mestergerendás 7–8 m-es helyiségekre való, 5–6 m-ként fektetett mestergerendákkal és merőleges fiókgerendákkal."
+  ],
+  simple: "A fa födémek logikája: gerenda + kitöltés + vakolat. A neveket a kitöltés adja: csap (csapos), szalma (pólyás), deszka (pór), palló (palló), borítás (borított). A béléses trükk: ha a deszkát a gerendák közé süllyeszted, laposabb lesz a födém.",
+  keys: ["Gerendafödém: zárt sor; gerendás: távol + kitöltő", "Csapos: ~2 m-ként keményfa csap, alátétdeszka, homok, nádszövet + vakolat", "Szalmapólyás: szalmacsöves karók + sár + agyag", "Pórfödém: látható gyalult gerenda + deszkázat", "Borított: 60–100 cm gerenda + alul-felül deszka", "Béléses: kisebb magasság; vakgerendás: burkolat deszkákra", "Mestergerendás: 7–8 m-re, 5–6 m-ként + fiókgerendák"],
+  cards: [
+    { q: "Mi tartja össze a csapos gerendafödémet?", a: "Mintegy 2 m-ként beépített keményfa csapok.", kind: "qa" },
+    { q: "Mi kerül a gerendavégek alá?", a: "Alátétdeszka.", kind: "fact" },
+    { q: "Miből áll a szalmapólyás födém?", a: "Sárba áztatott szalmacsöves karókból, sártapasztással és agyagréteggel.", kind: "qa" },
+    { q: "Mi a pórfödém?", a: "Alulról látható gyalult gerendák + deszkázat, feltöltéssel.", kind: "term" },
+    { q: "Mi a béléses borított födém előnye?", a: "Kisebb szerkezeti magasság (a feltöltés a gerendák között van).", kind: "concept" },
+    { q: "Mire való a mestergerendás födém?", a: "7–8 m széles helyiségekre, fiókgerendákkal fa-megtakarítással.", kind: "qa" }
+  ],
+  quiz: [
+    { t: "mc", q: "Milyen gyakran vannak a csapok a csapos födémben?", opts: ["50 cm-ként", "Kb. 2 m-ként", "60 cm-ként", "5 m-ként"], ans: 1, exp: "Mintegy 2,0 m-ként építik be a keményfa csapokat.", ref: "Csapos gerendafödém" },
+    { t: "tf", q: "A borított gerendás gerendatávolsága 60–100 cm.", ans: true, exp: "Négyszög gerendák 60–100 cm-re egymástól.", ref: "Borított gerendás" },
+    { t: "fill", q: "A mennyezetvakolat ___ közbeiktatásával készül a fa födémen.", ans: ["nádszövet"], exp: "Nádszövet tartja a vakolatot a fán.", ref: "Csapos gerendafödém" },
+    { t: "mc", q: "Melyik födémnek jó a hőszigetelése?", opts: ["Pórfödém", "Szalmapólyás", "Vakgerendás", "Acélgerendás"], ans: 1, exp: "A szalma-sár-agyag réteg jól szigetel.", ref: "Szalmapólyás" },
+    { t: "tf", q: "Mestergerendás födémmel 7–8 m is áthidalható.", ans: true, exp: "Mestergerendák 5–6 m-ként + fiókgerendák.", ref: "Mestergerendás" }
+  ]
+},
+"s03e": {
+  title: "Koporsófödém és félmonolit rendszerek",
+  body: [
+    "Gyártási technológia szerint a födém monolit (helyszínen készített), félmonolit (részben helyszínen készített), előregyártott vagy szerelt jellegű lehet. A félmonolit az előregyártott és a monolit előnyeit ötvözi: az elemek könnyűek, emelőgép nélkül rakhatók, a végleges teherbírást a helyszíni kibetonozás (borda, felbeton, koszorú) adja. A koporsófödém ferde vasbeton födémlemez tetőtér-beépítésnél: a tető ferde síkjai alkotta koporsó maga a teherhordó födém, előregyártott változata is létezik a tetőtérhez. Zsaluzási szabályai: 30° alatt kontrazsalu nélkül építhető, 30–45° között 50 cm-kénti Streckmetall-betét és sűrűbb beton kell (statikussal egyeztetve), 45° felett a kontrazsalu kötelező, a két héjat ankerekkel kötik át; betonozáskor először a vízszintes középrészt kell bebetonozni. A szigetelés a külső oldalra kerül, így a nagy hőtárolású lemez jó nyári hőcsillapítást ad.",
+    "A Leier Mesterfödém (LMF) félmonolit rendszer: rácsos LMF gerenda (csak az alsó öv betonozott: 4,5 cm, C25/30; rácsmagasság 15 vagy 19 cm; szélesség 11,0 vagy 12,5 cm; hossz 1,20–9,20 m 20 cm-es lépcsőben) és Leier EB 60/19 béléstest (450/250/190 mm, 19 kg), a bordákat és a 4–11 cm felbetont a koszorúval egy ütemben betonozva. Fektetés M10 habarcságyba (min. 1 cm), feltámaszkodás 680 cm-ig 10 cm, 700 cm-től 15 cm; csak Leier EB 60/19 használható hozzá. Kinyúló LMF gerendákkal erkély és loggia is képezhető. Rokon vázkerámia rendszerek a FERT (lágyvasalású, 3,0–6,6 m) és a PPB (feszített)."
+  ],
+  simple: "Félmonolit = könnyű elemek + helyszíni beton: kézzel rakod, a beton adja az erőt. A koporsófödém a tetőtér ferde betonfödémje. Az LMF-nél három számot jegyezz meg: 4,5 cm alsó beton, 4–11 cm felbeton, 10/15 cm felfekvés.",
+  keys: ["Félmonolit: részben helyszínen készülő", "Koporsó: ferde vb lemez tetőtérben", "Zsalu: 30° alatt sima, 30–45° Streckmetall, 45° felett kontrazsalu", "Betonozás: vízszintes középrész először", "Szigetelés kívülre → jó nyári hőcsillapítás", "LMF: 1,20–9,20 m, alsó beton 4,5 cm C25/30", "Felbeton 4–11 cm + koszorú egy ütemben", "Felfekvés 10 cm (680-ig) / 15 cm (700-tól)", "Csak Leier EB 60/19; erkély/loggia kinyúlással"],
+  cards: [
+    { q: "Mit jelent a félmonolit?", a: "Részben helyszínen készülő födémet: könnyű elemek + helyszíni beton.", kind: "concept" },
+    { q: "Mi a koporsófödém?", a: "Ferde vasbeton födémlemez tetőtér-beépítésnél.", kind: "term" },
+    { q: "Mikor kötelező a kontrazsalu koporsónál?", a: "45° hajlás felett.", kind: "fact" },
+    { q: "Mit kell először bebetonozni a koporsónál?", a: "A vízszintes középrészt.", kind: "qa" },
+    { q: "Mekkora az LMF hossztartománya?", a: "1,20–9,20 m, 20 cm-es lépcsőben.", kind: "fact" },
+    { q: "Milyen béléstest kell az LMF-hez?", a: "Csak a Leier EB 60/19.", kind: "fact" }
+  ],
+  quiz: [
+    { t: "mc", q: "Mi a koporsófödém?", opts: ["Fa födém", "Ferde vasbeton födém tetőtérben", "Boltozat", "Üvegtető"], ans: 1, exp: "A tető ferde síkjai alkotta koporsó a teherhordó födém.", ref: "Koporsófödém" },
+    { t: "tf", q: "45° felett kontrazsalu nélkül is zsaluzható a koporsó.", ans: false, exp: "45° felett a kontrazsalu elengedhetetlen.", ref: "Zsaluzási szabályok" },
+    { t: "fill", q: "Az LMF alsó betonozott részének magassága ___ .", ans: ["4,5 cm", "4,5"], exp: "Egységesen 4,5 cm, C25/30.", ref: "LMF" },
+    { t: "mc", q: "Mennyi az LMF felfekvése 700 cm-től?", opts: ["10 cm", "12 cm", "15 cm", "20 cm"], ans: 2, exp: "700 cm elemhossztól minimum 15 cm.", ref: "LMF" },
+    { t: "tf", q: "Az LMF-fel erkély és loggia is képezhető.", ans: true, exp: "Kinyúló gerendákkal és megfelelő vasalással igen.", ref: "LMF" },
+    { t: "mc", q: "Milyen vastag az LMF felbetonja?", opts: ["1–2 cm", "4–11 cm", "15–25 cm", "30 cm"], ans: 1, exp: "4–11 cm, a koszorúval egy ütemben.", ref: "LMF" }
+  ]
+},
+"s03f": {
+  title: "Erkély, függőfolyosó, loggia, párkány",
+  body: [
+    "Az erkély (balkon) a homlokzati síkból kinyúló, legalább félig nyitott tartózkodótér, közvetlenül a szobából megközelíthető. Szerkezetileg konzolos lemez: hőhídmegszakító elemmel, vagy kinyúló gerendákkal (például LMF-fel) és megfelelő vasalással készül, a koszorúval együttdolgoztatva. A függőfolyosó (gang) a bérházak udvari oldalán futó nyitott folyosó; történeti kialakítása acélgerendás, poroszsüveg-boltozatos vagy vasbeton lemezes, felújításnál a korrózióvédelem és a vízelvezetés a kritikus pont. A loggia három oldalról fallal, alul-felül födémmel körülvett külső tér, amely nem nyúlik ki a homlokzatból, ezért időjárásvédettebb. A franciaerkély nem tartózkodó, hanem a fal síkjában lévő korlátos nyílászáró. Hasznos alapterületbe csak a fedett és legalább 1,9 m belmagasságú külső tartózkodó számít be.",
+    "A párkány vízszintes homlokzati tagoló- és védőelem. Fajtái a főpárkány (koronázó, az épületet lezáró), az övpárkány (szinteket elválasztó), a könyöklőpárkány (ablak alatt) és a szemöldökpárkány (ablak felett). Készülhet téglasorok kiültetésével (például fogsoros mintával), vasbetonból vagy kőből. Szerepe kettős: tagolja a homlokzatot, és a kiülő profil (cseppentő) levezeti a vizet a falról."
+  ],
+  simple: "Erkély kinyúlik, loggia bent van a tömegben, franciaerkély csak ablak korláttal. A gang a bérház udvari folyosója. A párkány a homlokzat vízszintes dísz- és védősávja, ami az esővizet is levezeti.",
+  keys: ["Erkély: kinyúló konzolos lemez (hőhídmegszakító / LMF-kinyúlás)", "Függőfolyosó: bérházak udvari folyosója (acél + poroszsüveg / vb)", "Loggia: 3 oldal fal, nem nyúlik ki, védettebb", "Franciaerkély: csak korlátos ablak, nem tartózkodó", "Beszámítás: fedett + min. 1,9 m (loggia igen)", "Párkány: fő, öv, könyöklő, szemöldök", "Készítés: tégla kiültetés / vb / kő; szerep: tagolás + cseppentés"],
+  cards: [
+    { q: "Mi az erkély szerkezetileg?", a: "Kinyúló konzolos lemez.", kind: "concept" },
+    { q: "Mi a függőfolyosó?", a: "Bérházak udvari oldalán futó nyitott folyosó.", kind: "term" },
+    { q: "Miben különbözik a loggia az erkélytől?", a: "Három oldalról fal veszi körül, nem nyúlik ki a homlokzatból.", kind: "qa" },
+    { q: "Mi a franciaerkély?", a: "Korlátos nyílászáró a fal síkjában, nem tartózkodó.", kind: "term" },
+    { q: "Melyik párkány zárja le az épületet?", a: "A főpárkány (koronázó).", kind: "qa" },
+    { q: "Mi a párkány két szerepe?", a: "Homlokzattagolás és vízelvezetés (cseppentés).", kind: "qa" }
+  ],
+  quiz: [
+    { t: "mc", q: "Melyik nyúlik ki a homlokzatból?", opts: ["Loggia", "Erkély", "Franciaerkély", "Függőfolyosó"], ans: 1, exp: "Az erkély kinyúló konzolos tér.", ref: "Erkély" },
+    { t: "tf", q: "A franciaerkélyre ki lehet lépni.", ans: false, exp: "Nem tartózkodó, csak korlátos ablak.", ref: "Franciaerkély" },
+    { t: "fill", q: "Beszámításhoz a külső tartózkodó belmagassága legalább ___ .", ans: ["1,9 m", "1,9"], exp: "Fedett + legalább 1,9 m kell.", ref: "Alapterület" },
+    { t: "mc", q: "Melyik párkány választja el a szinteket?", opts: ["Főpárkány", "Övpárkány", "Könyöklőpárkány", "Szemöldökpárkány"], ans: 1, exp: "Az övpárkány fut végig a szintek között.", ref: "Párkányfajták" },
+    { t: "tf", q: "A gang felújításnál a korrózióvédelem kritikus.", ans: true, exp: "Történeti acélszerkezet + vízelvezetési gondok.", ref: "Függőfolyosó" }
   ]
 },
 "s04a": {
@@ -104,39 +186,15 @@ sections: {
     { t: "short", q: "Írd le a lépcsőképletet, és számold ki: m = 16 esetén mennyi az ideális sz?", keywords: ["60", "64", "28", "32"], model: "2m + sz = 60–64 cm, tehát 2×16 + sz = 60–64, azaz sz = 28–32 cm (gyakorlatban 30 cm).", exp: "A képlet a járás ritmusát követi.", ref: "Méretezés" }
   ]
 },
-"s04b": {
-  title: "Lejtők, rámpák",
-  body: [
-    "A lejtő lejtése gyalogos útvonalon legfeljebb 8%-os, rendszeres kézi teherszállítás útvonalán legfeljebb 10%-os, szabadban legfeljebb 15%-os lehet. Akadálymentes közlekedéshez a legfeljebb 17 cm-es szintkülönbség áthidalása legfeljebb 8%-os (1:12) lejtéssel történhet, nagyobb szintkülönbségnél 5% az ajánlott. A lejtőkarok hosszában legfeljebb 9,00 m vízszintes hossz után legalább 1,50 m-es pihenőt kell beiktatni; ha a járóvonal tört, a töréspontoknál legalább 1,5×1,5 m szabad terület kell a kerekesszék fordulásához, több kar esetén pedig minden második kar után két kerekesszék találkozásához szükséges hely. Épületen belül a többkarú lejtő legfeljebb 1,8 m szintkülönbséget hidalhat át. Szabadban csapadékvédelem vagy csúszásgátló bordázat kell.",
-    "Kialakítás: csúszásmentes járófelület, oldalsó lesodródás elleni védelem, korlát vagy mellvéd, szabadban vízelvezetés."
-  ],
-  simple: "A rámpa lényege: minél hosszabb, annál laposabb legyen. 17 cm-ig 8% elég, afölött 5%-kal számolj, 9 méterenként pihenővel. Kerekesszékkel fordulni is kell tudni: 1,5×1,5 méter a minimum.",
-  keys: ["Gyalogos 8%, kézi teher 10%, szabadban 15%", "Akadálymentes: 17 cm-ig 8% (1:12), felette 5%", "9,00 m-enként min. 1,50 m pihenő", "Törésnél 1,5×1,5 m forduló", "Minden 2. kar után 2 kerekesszék helye", "Beltéren többkarú max. 1,8 m szint/kar", "Kültéren csapadékvédelem vagy borda"],
-  cards: [
-    { q: "Mennyi a lejtés határa gyalogos útvonalon?", a: "Legfeljebb 8%.", kind: "fact" },
-    { q: "Mennyi kézi teherszállításnál, és szabadban?", a: "10%, illetve 15%.", kind: "fact" },
-    { q: "Milyen lejtéssel hidalható 17 cm akadálymentesen?", a: "Legfeljebb 8%-kal (1:12).", kind: "fact" },
-    { q: "Milyen gyakran kell pihenő a rámpán?", a: "Legfeljebb 9,00 m-enként, legalább 1,50 m hosszban.", kind: "fact" },
-    { q: "Mekkora forduló kell a töréspontnál?", a: "Legalább 1,5×1,5 m szabad terület.", kind: "fact" },
-    { q: "Mi kell a kültéri rámpára?", a: "Csapadékvédelem vagy csúszásgátló bordázat.", kind: "qa" }
-  ],
-  quiz: [
-    { t: "mc", q: "Mennyi a gyalogos lejtő legnagyobb lejtése?", opts: ["5%", "8%", "12%", "15%"], ans: 1, exp: "Gyalogos útvonalon legfeljebb 8%.", ref: "Lejtéskorlát" },
-    { t: "tf", q: "17 cm felett is jó a 8%-os rámpa akadálymentesnek.", ans: false, exp: "Felette 5% az ajánlott.", ref: "Akadálymentes" },
-    { t: "fill", q: "9,00 m karhossz után legalább ___ pihenő kell.", ans: ["1,50 m", "1,5 m", "150 cm"], exp: "Minimum 1,50 m hosszú pihenő.", ref: "Akadálymentes" },
-    { t: "mc", q: "Mekkora forduló kell a tört járóvonalnál?", opts: ["1,0×1,0 m", "1,5×1,5 m", "2,0×2,0 m", "0,6×0,6 m"], ans: 1, exp: "1,5×1,5 m a kerekesszék fordulásához.", ref: "Akadálymentes" },
-    { t: "tf", q: "Beltéren a többkarú rámpa karonként max. 1,8 m szintet hidalhat át.", ans: true, exp: "Így szól az előírás épületen belül.", ref: "Akadálymentes" }
-  ]
-},
 "s04c": {
   title: "Korlátok, mellvédek, felületek",
   body: [
-    "A szintkülönbség-áthidalók járófelületét csúszásgátló módon kell kialakítani, lépcsőn és lejtőn egyaránt. A korlát, illetve mellvéd magassága a szintkülönbségtől függ: általánosan mintegy 95–100 cm, nagy esésnél 110 cm, a pontos értéket a terv és a TÉKA adja. Akadálymentes közlekedésnél kétoldali kapaszkodó kell, gyermekkorlát külön magasságban. A pálcák kiosztásánál arra kell ügyelni, hogy a gyermekfej ne szorulhasson be. Kültérben fagyálló kialakítás és vízelvezetett lábazat szükséges."
+    "A lépcső járófelületét csúszásgátló módon kell kialakítani. A korlát, illetve mellvéd magassága a szintkülönbségtől függ: általánosan mintegy 95–100 cm, nagy esésnél 110 cm, a pontos értéket a terv és a TÉKA adja. Akadálymentes közlekedésnél kétoldali kapaszkodó kell, gyermekkorlát külön magasságban. A pálcák kiosztásánál arra kell ügyelni, hogy a gyermekfej ne szorulhasson be. Kültérben fagyálló kialakítás és vízelvezetett lábazat szükséges."
   ],
   simple: "A korlát akkor jó, ha nem csúszol meg, nem esel át rajta, és a gyerek feje sem akad be. Kint bírnia kell a fagyot és a vizet.",
   keys: ["Járófelület: csúszásgátló mindenhol", "Magasság: ~95–100 cm, nagy esésnél 110 cm", "Akadálymentes: kétoldali kapaszkodó", "Gyermekkorlát külön magasságban", "Pálcaosztás: gyermekfej be nem szorulhat", "Kültér: fagyálló + vízelvezetett lábazat"],
   cards: [
-    { q: "Milyen a járófelület lépcsőn és lejtőn?", a: "Csúszásgátló.", kind: "fact" },
+    { q: "Milyen a lépcső járófelülete?", a: "Csúszásgátló.", kind: "fact" },
     { q: "Mekkora az általános korlátmagasság?", a: "Mintegy 95–100 cm, nagy esésnél 110 cm.", kind: "fact" },
     { q: "Mi kell akadálymentes közlekedésnél?", a: "Kétoldali kapaszkodó.", kind: "qa" },
     { q: "Mire kell ügyelni a pálcaosztásnál?", a: "Hogy a gyermekfej ne szorulhasson be.", kind: "qa" },

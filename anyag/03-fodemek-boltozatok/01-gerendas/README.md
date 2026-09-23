@@ -23,3 +23,25 @@ Családi házak jellemző födéme, évtizedek óta vizsga-kedvenc.
 - kettőzés lehagyása → elégtelen teherbírás
 - koszorúba nem köt be → nincs együttdolgozás
 - átnedvesedett / fagyos béléstest beépítése
+
+## Porotherm födém (kerámia)
+A Porotherm Építési Rendszer része, de máshoz is használható.
+Elemei: kerámiaköpenyes előfeszített vasbeton födémgerenda
+(250–725 cm hossz 25 cm-es lépcsőben, szabad falköz 225–700 cm,
+16 kg/fm), kerámia béléstest (45/10, 45/17, 60/10, 60/17 –
+45/57/60/72 cm tengelytávra), helyszíni felbeton (C20/25)
+kiegészítő vasalással. Felfekvés legalább 120 mm.
+Tűzállósága vakolt szerkezetre REI 120, tűzvédelmi osztálya A1.
+Előnye az egységes kerámia felület (jól vakolható, repedésmentes
+mennyezet) és a 25 cm-es méretmodul. Beépítési menete: gerendák
+elhelyezése → béléstestek berakása → pótvasak és háló elhelyezése →
+bordák, felbeton és koszorú kibetonozása egy ütemben. A födémet
+tervezni és méretezni kell, csak a rendszer elemeivel építhető.
+
+## Rokon vázkerámia rendszerek
+FERT (lágyvasalású FG gerenda + vázkerámia papucsidom, 3,0–6,6 m)
+és PPB (feszített) – szerkesztési szabályaik (keresztborda 2 m-ként,
+gerendát vésni-vágni tilos, konzolosan nem építhető) a gyártói
+útmutatóból veendők. Megjegyzés: az ismétlőlistán szereplő „SG”
+rövidítés a gyártói katalógusokból nem azonosítható – kérdezd meg
+az oktatót, melyik rendszert takarja!

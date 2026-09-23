@@ -6,7 +6,7 @@
 - Átmenet: régi HÉSZ még OTÉK-alapú (253/1997), új már TÉKA-alapú.
   2025-ben még mindkettő született (építésijog.hu).
 - 284/2025. (VIII.25.) és későbbi módosító rendeletek pontosítják (pl. 136. § átmenetek).
-- Vizsgán: lépcső/lejtő számokat OTÉK 65–68. §-ból kérdezik, de tedd hozzá:
+- Vizsgán: a lépcsőméreteket OTÉK 65–68. §-ból kérdezik, de tedd hozzá:
   „ma TÉKA 280/2024”.
 
 ## Energetika: TNM helyett ÉKM

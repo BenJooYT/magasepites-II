@@ -32,8 +32,8 @@ Megnyitás internet nélkül:
 - `00-szabalyozas/` – TÉKA (OTÉK helyett), ÉKM energetika (TNM helyett), Eurocode-ok
 - `01-valaszfalak/` – falazott / monolit / szerelt válaszfalak
 - `02-athidalas-boltov-koszoru/` – áthidalók / boltövek / koszorúk
-- `03-fodemek-boltozatok/` – gerendás / monolit + előregyártott / történeti boltozatok
-- `04-lepcsok-lejtok/` – lépcsők / lejtők-rámpák / korlátok
+- `03-fodemek-boltozatok/` – gerendás / monolit + előregyártott / történeti boltozatok / fa födémek / koporsó + mesterfödém / erkély + párkány
+- `04-lepcsok/` – lépcsők / korlátok
 - `05-ho-paratechnika/` – hőfizika / 2026-os követelmények / csomópontok
 
 Mindegyik mappában `README.md` van vizsgakérdés-szerű pontokkal.
@@ -45,6 +45,6 @@ Mindegyik mappában `README.md` van vizsgakérdés-szerű pontokkal.
 - Wienerberger Porotherm alkalmazási útmutatók (A-10 neo, A-12, M-25, Thermo, U-zsalu)
 - Xella Ytong PSF áthidaló beépítési útmutató
 - E-gerenda gyártói és forgalmazói leírások (Railone, Dalos Tüzép)
-- OTÉK 65–68. § (lépcső/lejtő) + TÉKA 280/2024
+- OTÉK 65–68. § (lépcső) + TÉKA 280/2024
 - 9/2023. (V.25.) ÉKM energetika, FaGa.hu 2026-os összefoglaló
 - építésijog.hu – TÉKA-átmenetek 2025–26
