@@ -107,28 +107,82 @@ function go(h) { location.hash = h; }
 window.addEventListener("hashchange", render);
 function setNav(r) {
   var links = document.querySelectorAll("#mainNav a");
-  links.forEach(function (a) { a.classList.toggle("on", (a.getAttribute("data-r") || "") === r); });
+  links.forEach(function (a) {
+    var on = (a.getAttribute("data-r") || "") === r;
+    a.classList.toggle("on", on);
+    if (on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+  });
 }
-document.getElementById("navToggle").addEventListener("click", function () {
-  document.getElementById("mainNav").classList.toggle("open");
-});
+var navToggle = document.getElementById("navToggle"), mainNav = document.getElementById("mainNav");
+if (navToggle) {
+  navToggle.addEventListener("click", function () {
+    var open = mainNav.classList.toggle("open");
+    navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    navToggle.setAttribute("aria-label", open ? "Menü bezárása" : "Menü megnyitása");
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && mainNav.classList.contains("open")) {
+      mainNav.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+      navToggle.focus();
+    }
+  });
+  mainNav.addEventListener("click", function (e) {
+    if (e.target.closest("a")) { mainNav.classList.remove("open"); navToggle.setAttribute("aria-expanded", "false"); }
+  });
+}
+function crumbsHTML(items) {
+  var nav = document.getElementById("crumbs");
+  if (!nav) return;
+  if (!items || !items.length) { nav.hidden = true; nav.innerHTML = ""; return; }
+  nav.hidden = false;
+  nav.innerHTML = "<ol>" + items.map(function (it, i) {
+    var last = i === items.length - 1;
+    return "<li>" + (last || !it.href ? "<span aria-current='page'>" + esc(it.label) + "</span>"
+      : "<a href='" + it.href + "'>" + esc(it.label) + "</a>") + "</li>";
+  }).join("") + "</ol>";
+}
+function focusMain() {
+  var h1 = app.querySelector("h1");
+  if (h1) { h1.setAttribute("tabindex", "-1"); h1.focus({ preventScroll: true }); }
+  else { app.focus({ preventScroll: true }); }
+}
+var toTopBtn = document.getElementById("toTop");
+if (toTopBtn) {
+  window.addEventListener("scroll", function () {
+    toTopBtn.hidden = window.scrollY < 600;
+  }, { passive: true });
+  toTopBtn.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
+}
 function render() {
   if (window.__heroDestroy) { try { window.__heroDestroy(); } catch (e) {} window.__heroDestroy = null; }
   var h = location.hash || "#/";
   var parts = h.replace(/^#\/?/, "").split("/");
   var r = parts[0] || "";
   setNav(r);
-  document.getElementById("mainNav").classList.remove("open");
+  var mn = document.getElementById("mainNav"), nt = document.getElementById("navToggle");
+  if (mn) mn.classList.remove("open");
+  if (nt) nt.setAttribute("aria-expanded", "false");
   window.scrollTo(0, 0);
-  if (r === "") return pDashboard();
-  if (r === "tananyag") return pSubjects();
-  if (r === "tanulas") return pStudy(parts[1]);
-  if (r === "kartyak") return pCards();
-  if (r === "kviz") return parts[1] === "play" ? pQuizPlay() : pQuizCenter();
-  if (r === "ismetles") return pRevision();
-  if (r === "statisztika") return pStats();
-  if (r === "beallitasok") return pSettings();
+  if (r === "") { crumbsHTML([]); pDashboard(); focusMain(); return; }
+  if (r === "tananyag") { crumbsHTML([{ label: "Vezérlőpult", href: "#/" }, { label: "Tananyag" }]); pSubjects(); focusMain(); return; }
+  if (r === "tanulas") {
+    var s = DB.sections[parts[1]];
+    crumbsHTML([{ label: "Vezérlőpult", href: "#/" }, { label: "Tananyag", href: "#/tananyag" }, { label: s ? s.title : "Lecke" }]);
+    pStudy(parts[1]); focusMain(); return;
+  }
+  if (r === "kartyak") { crumbsHTML([{ label: "Vezérlőpult", href: "#/" }, { label: "Kártyák" }]); pCards(); focusMain(); return; }
+  if (r === "kviz") {
+    crumbsHTML(parts[1] === "play" ? [{ label: "Vezérlőpult", href: "#/" }, { label: "Kvíz", href: "#/kviz" }, { label: "Kitöltés" }] : [{ label: "Vezérlőpult", href: "#/" }, { label: "Kvíz" }]);
+    if (parts[1] === "play") pQuizPlay(); else pQuizCenter();
+    focusMain(); return;
+  }
+  if (r === "ismetles") { crumbsHTML([{ label: "Vezérlőpult", href: "#/" }, { label: "Ismétlés" }]); pRevision(); focusMain(); return; }
+  if (r === "statisztika") { crumbsHTML([{ label: "Vezérlőpult", href: "#/" }, { label: "Statisztika" }]); pStats(); focusMain(); return; }
+  if (r === "beallitasok") { crumbsHTML([{ label: "Vezérlőpult", href: "#/" }, { label: "Beállítások" }]); pSettings(); focusMain(); return; }
+  crumbsHTML([]);
   app.innerHTML = "<h1>Ismeretlen oldal</h1><p class='mut'>Ilyen oldal nincs.</p>";
+  focusMain();
 }
 
 /* ---------- Vezérlőpult ---------- */
@@ -197,20 +251,41 @@ function statCard(label, val, p) {
 
 /* ---------- Tananyag ---------- */
 function pSubjects() {
-  var htm = "<h1>Tananyag</h1><p class='mut'>Magasépítés II. – 6 fejezet, " + secOrder().length + " lecke. Válassz leckét a tanuláshoz.</p><nav class='toc'>";
+  var htm = "<h1>Tananyag</h1><p class='mut'>Magasépítés II. – 6 fejezet, " + secOrder().length + " lecke. Válassz leckét a tanuláshoz.</p>"
+    + "<div class='filterrow'><label class='f' for='subFilter'>Keresés a leckék között</label><input type='text' id='subFilter' placeholder='pl. födém, koszorú, hő…' autocomplete='off'></div><nav class='toc' id='subToc'>";
   DB.chapters.forEach(function (c) {
-    htm += "<h2>" + c.n + ". " + esc(c.title) + "</h2>";
+    htm += "<h2 data-ch='" + c.id + "'>" + c.n + ". " + esc(c.title) + "</h2>";
     c.sections.forEach(function (id) {
       var s = DB.sections[id];
       var st = S.sec[id];
       var acc = st && st.asked ? " · " + Math.round(st.correct / st.asked * 100) + "% (" + st.asked + " kérdés)" : "";
-      htm += "<a href='#/tanulas/" + id + "'><div class='card'><b>" + esc(s.title) + "</b> "
+      htm += "<a href='#/tanulas/" + id + "' data-sec='" + id + "' data-title='" + esc(norm(s.title)) + "'><div class='card'><b>" + esc(s.title) + "</b> "
         + (S.secDone[id] ? "<span class='chip done'>kész ✓</span>" : "<span class='chip'>nincs kész</span>")
         + "<span class='chip'>" + s.cards.length + " kártya</span><span class='chip'>" + s.quiz.length + " kérdés</span>"
         + "<br><span class='mut small'>" + esc(simplePreview(s.simple)) + acc + "</span></div></a>";
     });
   });
   app.innerHTML = htm + "</nav>";
+  var inp = document.getElementById("subFilter");
+  if (inp) inp.addEventListener("input", function () {
+    var q = norm(inp.value);
+    var links = document.querySelectorAll("#subToc a[data-sec]");
+    var heads = document.querySelectorAll("#subToc h2[data-ch]");
+    links.forEach(function (a) {
+      var hit = !q || a.getAttribute("data-title").indexOf(q) !== -1;
+      a.style.display = hit ? "" : "none";
+    });
+    heads.forEach(function (h2) {
+      var ch = h2.getAttribute("data-ch");
+      var any = false;
+      links.forEach(function (a) {
+        var sec = a.getAttribute("data-sec");
+        var c = chOf(sec);
+        if (c && c.id === ch && a.style.display !== "none") any = true;
+      });
+      h2.style.display = any ? "" : "none";
+    });
+  });
 }
 function simplePreview(s) { return s.length > 140 ? s.slice(0, 140) + "…" : s; }
 
@@ -228,12 +303,18 @@ function pStudy(id) {
   var htm = "<p class='mut'>" + ch.n + ". " + esc(ch.title) + "</p><h1>" + esc(s.title) + "</h1>";
   htm += "<div class='secnav'>" + (pv ? "<a class='btn ghost' href='#/tanulas/" + pv + "'>← " + esc(DB.sections[pv].title) + "</a>" : "<span></span>")
     + (nx ? "<a class='btn ghost' href='#/tanulas/" + nx + "'>" + esc(DB.sections[nx].title) + " →</a>" : "<span></span>") + "</div>";
-  htm += "<h2>1. Tananyag</h2><div class='card'>" + bodyHTML(s) + "</div>";
-  htm += "<h2>2. Egyszerűen</h2><div class='card'>" + esc(s.simple) + "</div>";
-  htm += "<h2>3. Kulcspontok</h2><ul class='keys'>" + s.keys.map(function (k) { return "<li>" + esc(k) + "</li>"; }).join("") + "</ul>";
-  htm += "<h2>4. Kártyák</h2><div id='studyCards'></div>";
-  htm += "<h2>5. Minivizsga</h2><div id='studyQuiz'><button class='btn' id='startMini'>Minivizsga indítása (" + Math.min(S.quizLen, s.quiz.length) + " kérdés)</button></div>";
-  htm += "<h2>6. Kész?</h2><div id='studyDone'>" + doneBox(id) + "</div>";
+  htm += "<nav class='studynav' aria-label='Lecke tartalomjegyzéke'><div class='studynav-in'>"
+    + "<a href='#st-tananyag'>1. Tananyag</a><a href='#st-egyszeru'>2. Egyszerűen</a>"
+    + "<a href='#st-kulcs'>3. Kulcspontok</a><a href='#st-kartya'>4. Kártyák</a>"
+    + "<a href='#st-mini'>5. Minivizsga</a><a href='#st-kesz'>6. Kész?</a></div></nav>";
+  htm += "<h2 id='st-tananyag'>1. Tananyag</h2><div class='card'>" + bodyHTML(s) + "</div>";
+  htm += "<h2 id='st-egyszeru'>2. Egyszerűen</h2><div class='card'>" + esc(s.simple) + "</div>";
+  htm += "<h2 id='st-kulcs'>3. Kulcspontok</h2><ul class='keys'>" + s.keys.map(function (k) { return "<li>" + esc(k) + "</li>"; }).join("") + "</ul>";
+  htm += "<h2 id='st-kartya'>4. Kártyák</h2><div id='studyCards'></div>";
+  htm += "<h2 id='st-mini'>5. Minivizsga</h2><div id='studyQuiz'><button class='btn' id='startMini'>Minivizsga indítása (" + Math.min(S.quizLen, s.quiz.length) + " kérdés)</button></div>";
+  htm += "<h2 id='st-kesz'>6. Kész?</h2><div id='studyDone'>" + doneBox(id) + "</div>";
+  htm += "<div class='secnav'>" + (pv ? "<a class='btn ghost' href='#/tanulas/" + pv + "'>← Előző lecke</a>" : "<a class='btn ghost' href='#/tananyag'>← Tananyag</a>")
+    + (nx ? "<a class='btn' href='#/tanulas/" + nx + "'>Következő lecke →</a>" : "<a class='btn' href='#/tananyag'>Tananyag áttekintés</a>") + "</div>";
   app.innerHTML = htm;
   flashWidget(document.getElementById("studyCards"), s.cards.map(function (c, i) { return { sec: id, idx: i, card: c }; }), { compact: true });
   document.getElementById("startMini").addEventListener("click", function () {
@@ -265,6 +346,7 @@ function flashWidget(mount, queue, opts) {
   opts = opts || {};
   queue = shuffle(queue.slice());
   var i = 0, again = {}, stats = { knew: 0, part: 0, dont: 0 };
+  if (window.__fcKey) { document.removeEventListener("keydown", window.__fcKey); window.__fcKey = null; }
   function render() {
     if (i >= queue.length) {
       mount.innerHTML = "<div class='card'><b>Kártyázás vége.</b> Tudtam: " + stats.knew + " · Részben: " + stats.part + " · Nem tudtam: " + stats.dont
@@ -275,16 +357,16 @@ function flashWidget(mount, queue, opts) {
     }
     var it = queue[i], c = it.card;
     mount.innerHTML = "<div class='fcwrap'><div class='fcprog'><b>" + (i + 1) + " / " + queue.length + "</b><div class='bar' style='flex:1'><i style='width:" + Math.round(i / queue.length * 100) + "%'></i></div></div>"
-      + "<div class='fc' id='fc' tabindex='0'><div class='fc-in'><div class='fc-face fc-front'><div><div class='fc-kind'>" + (KIND[c.kind] || "Kártya") + " · kattints a fordításhoz</div><br>" + esc(c.q) + "</div></div>"
+      + "<div class='fc' id='fc' tabindex='0' role='button' aria-pressed='false' aria-label='Kártya " + (i + 1) + " / " + queue.length + ". Fordításhoz nyomj Entert vagy kattints.'><div class='fc-in'><div class='fc-face fc-front'><div><div class='fc-kind'>" + (KIND[c.kind] || "Kártya") + " · kattints a fordításhoz</div><br>" + esc(c.q) + "</div></div>"
       + "<div class='fc-face fc-back'><div>" + esc(c.a) + "</div></div></div></div>"
-      + "<div class='grade-row' id='grades' style='display:none'>"
+      + "<div class='grade-row' id='grades' style='display:none' aria-label='Önértékelés'>"
       + "<button class='btn bad' data-g='0'>Nem tudtam (1)</button>"
       + "<button class='btn warn' data-g='3'>Részben (2)</button>"
       + "<button class='btn good' data-g='5'>Tudtam (3)</button></div>"
       + "<p class='mut small'>Billentyű: <kbd>Szóköz</kbd> fordít, <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> értékel. (" + esc(DB.sections[it.sec].title) + ")</p></div>";
     var fc = document.getElementById("fc");
     addTilt(fc);
-    function flip() { fc.classList.add("flip"); fc.style.transform = ""; document.getElementById("grades").style.display = "grid"; fc.onclick = null; }
+    function flip() { fc.classList.add("flip"); fc.setAttribute("aria-pressed", "true"); fc.style.transform = ""; document.getElementById("grades").style.display = "grid"; fc.onclick = null; var g1 = document.querySelector("#grades button"); if (g1) g1.focus(); }
     fc.onclick = flip;
     fc.onkeydown = function (e) {
       if (e.code === "Space" || e.code === "Enter") { e.preventDefault(); flip(); }
@@ -300,7 +382,7 @@ function flashWidget(mount, queue, opts) {
   }
   mount._key = function (e) {
     var fc = document.getElementById("fc"); if (!fc) return;
-    if (e.key === " " || e.key === "Enter") { e.preventDefault(); fc.click(); }
+    if (e.key === " " || e.key === "Enter") { if (document.activeElement === document.body) { e.preventDefault(); fc.click(); } }
     else if (["1", "2", "3"].indexOf(e.key) !== -1) {
       var gr = document.getElementById("grades");
       if (gr && gr.style.display !== "none") {
@@ -310,7 +392,8 @@ function flashWidget(mount, queue, opts) {
       }
     }
   };
-  document.onkeydown = mount._key;
+  window.__fcKey = mount._key;
+  document.addEventListener("keydown", mount._key);
   render();
 }
 
@@ -331,7 +414,7 @@ function pCards() {
         rows.push("<tr><td>" + esc(DB.sections[id].title) + "</td><td>" + esc(c.q.length > 70 ? c.q.slice(0, 70) + "…" : c.q) + "</td><td>" + stateName(cs) + "</td></tr>");
       });
     });
-    document.getElementById("fList").innerHTML = rows.length ? "<table class='t'><tr><th>Lecke</th><th>Kérdés</th><th>Állapot</th></tr>" + rows.join("") + "</table>"
+    document.getElementById("fList").innerHTML = rows.length ? "<div class='table-scroll'><table class='t'><tr><th>Lecke</th><th>Kérdés</th><th>Állapot</th></tr>" + rows.join("") + "</table></div>"
       : "<div class='empty'>Nincs ilyen kártya. Vegyed ki a pipát, vagy válassz másik fejezetet.</div>";
   }
   document.getElementById("fCh").onchange = list;
@@ -406,11 +489,11 @@ function pQuizPlay() {
   if (QZ.done) return renderResults();
   var q = QZ.qs[QZ.i], r = QZ.res[QZ.i];
   var htm = "<p class='mut'>" + esc(QZ.title) + (QZ.left ? " · <span class='timer' id='tm'></span>" : "") + "</p><h1>" + (QZ.i + 1) + ". kérdés <span class='mut small'>/ " + QZ.qs.length + " · " + Quiz.typeName(q.t) + "</span></h1>";
-  htm += "<div class='qdots'>" + QZ.qs.map(function (_, i) {
+  htm += "<div class='qdots' role='group' aria-label='Kérdések'>" + QZ.qs.map(function (_, i) {
     var cls = i === QZ.i ? "cur" : "";
     if (QZ.res[i]) cls += QZ.res[i].ok ? " ok" : " no";
     else if (QZ.given[i] !== undefined) cls += " cur";
-    return "<button data-i='" + i + "' class='" + cls + "'>" + (i + 1) + "</button>";
+    return "<button data-i='" + i + "' class='" + cls + "' aria-label='" + (i + 1) + ". kérdés" + (QZ.res[i] ? (QZ.res[i].ok ? ", helyes" : ", helytelen") : "") + "'" + (i === QZ.i ? " aria-current='true'" : "") + ">" + (i + 1) + "</button>";
   }).join("") + "</div>";
   htm += "<div class='card'><p><b>" + esc(q.q) + "</b></p><div id='qbody'></div><div id='qfb'></div></div>";
   htm += "<div class='secnav'><button class='btn ghost' id='qPrev'" + (QZ.i === 0 ? " disabled" : "") + ">← Előző</button>"
@@ -563,15 +646,15 @@ function pStats() {
     htm += "<div class='card'><b>" + c.n + ". " + esc(c.title) + "</b> – kész " + done + "/" + c.sections.length
       + " · kvíz " + pct(corr, asked) + "% (" + asked + " válasz)<div class='bar" + (pct(corr, asked) >= 70 ? " good" : "") + "'><i style='width:" + pct(corr, asked) + "%'></i></div></div>";
   });
-  htm += "<h2>Leckénként</h2><table class='t'><tr><th>Lecke</th><th>Kész</th><th>Helyes</th><th>Válasz</th></tr>";
+  htm += "<h2>Leckénként</h2><div class='table-scroll'><table class='t'><tr><th>Lecke</th><th>Kész</th><th>Helyes</th><th>Válasz</th></tr>";
   secOrder().forEach(function (id) {
     var s = S.sec[id] || { asked: 0, correct: 0 };
     htm += "<tr><td><a href='#/tanulas/" + id + "'>" + esc(DB.sections[id].title) + "</a></td><td>" + (S.secDone[id] ? "✓" : "–") + "</td><td>" + pct(s.correct, s.asked) + "%</td><td>" + s.asked + "</td></tr>";
   });
-  htm += "</table><h2>Kvízelőzmény</h2>";
-  htm += S.quizHist.length ? "<table class='t'><tr><th>Idő</th><th>Kvíz</th><th>Eredmény</th></tr>" + S.quizHist.slice(0, 20).map(function (h) {
+  htm += "</table></div><h2>Kvízelőzmény</h2>";
+  htm += S.quizHist.length ? "<div class='table-scroll'><table class='t'><tr><th>Idő</th><th>Kvíz</th><th>Eredmény</th></tr>" + S.quizHist.slice(0, 20).map(function (h) {
     return "<tr><td>" + fmtDate(h.ts) + "</td><td>" + esc(h.title) + "</td><td>" + h.correct + "/" + h.total + " (" + pct(h.correct, h.total) + "%)</td></tr>";
-  }).join("") + "</table>" : "<div class='empty'>Még nincs kvízelőzményed.</div>";
+  }).join("") + "</table></div>" : "<div class='empty'>Még nincs kvízelőzményed.</div>";
   app.innerHTML = htm;
 }
 

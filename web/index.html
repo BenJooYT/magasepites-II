@@ -3,27 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Magasépítés II. (GS-5-17) – offline tanulótárs: leckék, kártyák, kvízek, vizsgaszimuláció.">
+<meta name="theme-color" content="#1a1f2a" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <title>Magasépítés II. – Tanulótárs</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<a class="skip" href="#app">Ugrás a tartalomra</a>
 <header class="topbar">
-  <a class="brand" href="#/">Magasépítés II. <span>Tanulótárs</span></a>
-  <button id="navToggle" class="nav-toggle" aria-label="Menü megnyitása">☰</button>
-  <nav id="mainNav" class="mainnav">
-    <a href="#/" data-r="">Vezérlőpult</a>
-    <a href="#/tananyag" data-r="tananyag">Tananyag</a>
-    <a href="#/kartyak" data-r="kartyak">Kártyák</a>
-    <a href="#/kviz" data-r="kviz">Kvíz</a>
-    <a href="#/ismetles" data-r="ismetles">Ismétlés</a>
-    <a href="#/statisztika" data-r="statisztika">Statisztika</a>
-    <a href="#/beallitasok" data-r="beallitasok">Beállítások</a>
-  </nav>
+  <div class="topbar-in">
+    <a class="brand" href="#/" aria-label="Magasépítés II. Tanulótárs – Vezérlőpult">Magasépítés II. <span>Tanulótárs</span></a>
+    <button id="navToggle" class="nav-toggle" aria-label="Menü megnyitása" aria-expanded="false" aria-controls="mainNav"><span aria-hidden="true">☰</span><span class="nav-toggle-txt">Menü</span></button>
+    <nav id="mainNav" class="mainnav" aria-label="Fő navigáció">
+      <a href="#/" data-r="">Vezérlőpult</a>
+      <a href="#/tananyag" data-r="tananyag">Tananyag</a>
+      <a href="#/kartyak" data-r="kartyak">Kártyák</a>
+      <a href="#/kviz" data-r="kviz">Kvíz</a>
+      <a href="#/ismetles" data-r="ismetles">Ismétlés</a>
+      <a href="#/statisztika" data-r="statisztika">Statisztika</a>
+      <a href="#/beallitasok" data-r="beallitasok">Beállítások</a>
+    </nav>
+  </div>
 </header>
-<main id="app" class="wrap"></main>
-<footer class="foot wrap">
-  <span>Magasépítés II. (GS-5-17) tanulókártyák – offline, külső kapcsolat nélkül működik. Haladásod a böngésződben tárolódik.</span>
+<nav id="crumbs" class="wrap crumbs" aria-label="Morzsamenü" hidden></nav>
+<main id="app" class="wrap" tabindex="-1"></main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <nav aria-label="Kiegészítő navigáció" class="footnav">
+      <a href="#/">Vezérlőpult</a>
+      <a href="#/tananyag">Tananyag</a>
+      <a href="#/kartyak">Kártyák</a>
+      <a href="#/kviz">Kvíz</a>
+      <a href="#/ismetles">Ismétlés</a>
+      <a href="#/statisztika">Statisztika</a>
+      <a href="#/beallitasok">Beállítások</a>
+    </nav>
+    <span class="foot-txt">Magasépítés II. (GS-5-17) tanulókártyák – offline, külső kapcsolat nélkül működik. Haladásod a böngésződben tárolódik.</span>
+  </div>
 </footer>
+<button id="toTop" class="totop" aria-label="Vissza az oldal tetejére" hidden>↑</button>
 <script src="data-a.js"></script>
 <script src="data-b.js"></script>
 <script src="quiz.js"></script>
